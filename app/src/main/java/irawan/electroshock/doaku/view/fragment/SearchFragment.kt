@@ -22,7 +22,6 @@ fun SearchButton(network: Boolean) {
         OutlinedTextField(
             value = dataSearch,
             leadingIcon = { Icon(imageVector = Icons.Default.Search, contentDescription = null) },
-//            trailingIcon = { Icon(imageVector = Icons.Default.Search, contentDescription = null) },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
             onValueChange = { search ->
                 dataSearch = search
