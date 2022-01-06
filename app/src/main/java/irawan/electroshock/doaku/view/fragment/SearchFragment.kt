@@ -1,7 +1,6 @@
 package irawan.electroshock.doaku.view.fragment
 
 import android.util.Log
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.Icon
