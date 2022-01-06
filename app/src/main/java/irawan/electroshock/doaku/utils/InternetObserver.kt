@@ -5,7 +5,7 @@ import java.io.IOException
 import java.net.InetSocketAddress
 import javax.net.SocketFactory
 
-object DoesNetworkHaveInternet  {
+object InternetObserver  {
 
     fun execute(socketFactory: SocketFactory) : Boolean{
         return try{

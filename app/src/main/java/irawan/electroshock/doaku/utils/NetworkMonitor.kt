@@ -44,7 +44,7 @@ class NetworkMonitor(context : Context) : LiveData<Boolean>() {
             Log.d("Connectivity Manager", "onAvailable: ${network}, $hasInternetCapability")
             if (hasInternetCapability == true){
                 CoroutineScope(Dispatchers.IO).launch{
-                    val hasInternet = DoesNetworkHaveInternet .execute(network.socketFactory)
+                    val hasInternet = InternetObserver .execute(network.socketFactory)
                     if (hasInternet){
                         Log.d("Connectivity Manager", "onAvailable: adding network. ${network}")
                         validNetwork.add(network)
