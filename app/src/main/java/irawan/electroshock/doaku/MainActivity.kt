@@ -15,7 +15,6 @@ import irawan.electroshock.doaku.database.DoaDatabaseFactory
 import irawan.electroshock.doaku.ui.theme.DoakuTheme
 import irawan.electroshock.doaku.utils.NetworkMonitor
 import irawan.electroshock.doaku.view.NavigationController
-import irawan.electroshock.doaku.view.fragment.SearchButton
 import irawan.electroshock.doaku.view_model.DataViewModel
 
 @AndroidEntryPoint
