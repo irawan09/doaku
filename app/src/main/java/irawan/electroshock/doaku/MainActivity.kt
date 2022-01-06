@@ -5,13 +5,17 @@ import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
+import androidx.compose.ui.Modifier
 import dagger.hilt.android.AndroidEntryPoint
 import irawan.electroshock.doaku.database.DoaDatabaseFactory
 import irawan.electroshock.doaku.ui.theme.DoakuTheme
 import irawan.electroshock.doaku.utils.NetworkMonitor
 import irawan.electroshock.doaku.view.NavigationController
+import irawan.electroshock.doaku.view.fragment.SearchButton
 import irawan.electroshock.doaku.view_model.DataViewModel
 
 @AndroidEntryPoint
@@ -28,7 +32,11 @@ class MainActivity : ComponentActivity() {
                     setContent {
                         DoakuTheme {
                             Surface(color = MaterialTheme.colors.background) {
-                                NavigationController(data)
+                                Column(modifier = Modifier
+                                    .fillMaxWidth()) {
+                                    SearchButton()
+                                    NavigationController(data)
+                                }
                             }
                         }
                     }

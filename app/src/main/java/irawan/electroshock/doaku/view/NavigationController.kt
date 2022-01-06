@@ -9,6 +9,7 @@ import androidx.navigation.navArgument
 import com.google.gson.Gson
 import irawan.electroshock.doaku.model.DatabaseModel
 
+
 @Composable
 fun NavigationController(data: List<DatabaseModel>) {
     val navController = rememberNavController()
