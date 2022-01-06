@@ -8,12 +8,14 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.google.gson.Gson
 import irawan.electroshock.doaku.model.DatabaseModel
+import irawan.electroshock.doaku.view.fragment.SearchButton
 
 
 @Composable
-fun NavigationController(data: List<DatabaseModel>) {
+fun NavigationController(data: List<DatabaseModel>, network : Boolean) {
     val navController = rememberNavController()
 
+    SearchButton(network)
     NavHost(navController = navController, startDestination = "DoaListFragment" ){
         composable("DoaListFragment"){
             DoaListFragment(navController = navController, data)

@@ -34,8 +34,7 @@ class MainActivity : ComponentActivity() {
                             Surface(color = MaterialTheme.colors.background) {
                                 Column(modifier = Modifier
                                     .fillMaxWidth()) {
-                                    SearchButton()
-                                    NavigationController(data)
+                                    NavigationController(data, network)
                                 }
                             }
                         }
@@ -48,7 +47,10 @@ class MainActivity : ComponentActivity() {
                     setContent {
                         DoakuTheme {
                             Surface(color = MaterialTheme.colors.background) {
-                                NavigationController(it)
+                                Column(modifier = Modifier
+                                    .fillMaxWidth()) {
+                                    NavigationController(it, network)
+                                }
                             }
                         }
                     }
