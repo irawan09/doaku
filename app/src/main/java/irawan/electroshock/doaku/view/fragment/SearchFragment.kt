@@ -29,7 +29,6 @@ fun SearchButton(network: Boolean) {
                 }else{
                     Log.d("Database Search", dataSearch.text)
                 }
-
             },
             label = { Text(text = "Search") },
             placeholder = { Text(text = "Enter your search") },
