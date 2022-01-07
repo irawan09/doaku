@@ -4,10 +4,21 @@ import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
+import androidx.lifecycle.LifecycleOwner
 
-class Utils() {
+class Utils {
 
     companion object{
+        private lateinit var lifecycleOwner : LifecycleOwner
+
+        fun setLifeCycleOwner(lifecycleOwner: LifecycleOwner){
+            this.lifecycleOwner = lifecycleOwner
+        }
+
+        fun getLifeCycleOwner(): LifecycleOwner{
+            return lifecycleOwner
+        }
+
         fun hasNetwork(context: Context): Boolean {
             val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {

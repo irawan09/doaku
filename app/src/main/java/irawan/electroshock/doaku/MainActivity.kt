@@ -11,6 +11,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import irawan.electroshock.doaku.database.DoaDatabaseFactory
 import irawan.electroshock.doaku.ui.theme.DoakuTheme
 import irawan.electroshock.doaku.utils.NetworkMonitor
+import irawan.electroshock.doaku.utils.Utils
 import irawan.electroshock.doaku.view.NavigationController
 import irawan.electroshock.doaku.view_model.DataViewModel
 
@@ -21,6 +22,7 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Utils.setLifeCycleOwner(this)
         networkMonitor = NetworkMonitor(this)
         networkMonitor.observe(this, { network ->
             if(network == true){
@@ -42,7 +44,6 @@ class MainActivity : ComponentActivity() {
                         DoakuTheme {
                             Surface(color = MaterialTheme.colors.background) {
                                     NavigationController(it, network)
-
                             }
                         }
                     }

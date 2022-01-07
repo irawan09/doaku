@@ -1,5 +1,7 @@
 package irawan.electroshock.doaku.view.fragment
 
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardOptions
@@ -13,9 +15,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.LiveData
+import androidx.navigation.NavController
 
 @Composable
-fun SearchButton(network: Boolean) {
+fun SearchFragment(navController: NavController, network: Boolean) {
     var dataSearch by remember { mutableStateOf(TextFieldValue("")) }
     return Column() {
         OutlinedTextField(
@@ -26,8 +30,13 @@ fun SearchButton(network: Boolean) {
                 dataSearch = search
                 if (network == true){
                     Log.d("Data Search",dataSearch.text)
+//                    Handler(Looper.getMainLooper()).postDelayed({
+//                        navController.navigate("SearchFragment")
+//                    }, 5000)
+
                 }else{
                     Log.d("Database Search", dataSearch.text)
+//                    navController.navigate("SearchFragment")
                 }
             },
             label = { Text(text = "Search") },
