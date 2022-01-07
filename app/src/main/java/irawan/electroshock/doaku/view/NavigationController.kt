@@ -15,10 +15,9 @@ import irawan.electroshock.doaku.view.fragment.SearchButton
 fun NavigationController(data: List<DatabaseModel>, network : Boolean) {
     val navController = rememberNavController()
 
-    SearchButton(network)
     NavHost(navController = navController, startDestination = "DoaListFragment" ){
         composable("DoaListFragment"){
-            DoaListFragment(navController = navController, data)
+            DoaListFragment(navController = navController, data, network)
         }
         composable("DoaDetailsFragment/{doa}", arguments = listOf(navArgument("doa"){
            type = NavType.StringType
