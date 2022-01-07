@@ -13,6 +13,9 @@ interface DoaDao {
     @Query("SELECT * FROM doa_table")
     fun getAllDoa(): LiveData<List<DatabaseModel>>
 
+    @Query("SELECT * FROM doa_table  WHERE doa LIKE :query")
+    fun getDoaName(query: String): LiveData<List<DatabaseModel>>
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertDoa(databaseModel: DatabaseModel)
 

@@ -19,6 +19,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.navigation.NavController
+import irawan.electroshock.doaku.database.DoaDatabaseFactory
 import irawan.electroshock.doaku.model.DatabaseModel
 import irawan.electroshock.doaku.repository.DataRepository
 import irawan.electroshock.doaku.utils.Utils
@@ -35,14 +36,14 @@ fun SearchFragment(context: Context, network: Boolean, navController: NavControl
                 dataSearch = search
                 if (network == true){
                     Log.d("Data Search",dataSearch.text)
-                    val seacher = "%${dataSearch.text}%"
 //                    Handler(Looper.getMainLooper()).postDelayed({
 //                        navController.navigate("SearchFragment")
 //                    }, 5000)
 
                 }else{
                     Log.d("Database Search", dataSearch.text)
-//                    navController.navigate("SearchFragment")
+                    searchDataFromDb(dataSearch.text, context, navController)
+
                 }
             },
             label = { Text(text = "Search") },
@@ -56,17 +57,10 @@ fun SearchFragment(context: Context, network: Boolean, navController: NavControl
 }
 
 
-fun searchDataFromDb(search: String, context : Context){
+fun searchDataFromDb(search: String, context : Context, navController: NavController){
     val search ="%$search%"
-    DataRepository(context).getDatabaseResponseLiveData()?.observe(Utils.getLifeCycleOwner(), object :
-        Observer<List<DatabaseModel>> {
-        override fun onChanged(data: List<DatabaseModel>?) {
-            if (data == null){
-                return
-            }
-
-
-        }
-
+    DoaDatabaseFactory.getDatabaseInstance(context).doaDao().getDoaName(search).observe(Utils.getLifeCycleOwner(), {
+        Log.d("Database Search", it.toString())
+//        navController.navigate("SearchFragment")
     })
 }
