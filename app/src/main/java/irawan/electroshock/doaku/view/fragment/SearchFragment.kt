@@ -1,5 +1,6 @@
 package irawan.electroshock.doaku.view.fragment
 
+import android.content.Context
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
@@ -16,10 +17,14 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.Observer
 import androidx.navigation.NavController
+import irawan.electroshock.doaku.model.DatabaseModel
+import irawan.electroshock.doaku.repository.DataRepository
+import irawan.electroshock.doaku.utils.Utils
 
 @Composable
-fun SearchFragment(navController: NavController, network: Boolean) {
+fun SearchFragment(context: Context, network: Boolean, navController: NavController ) {
     var dataSearch by remember { mutableStateOf(TextFieldValue("")) }
     return Column() {
         OutlinedTextField(
@@ -30,6 +35,7 @@ fun SearchFragment(navController: NavController, network: Boolean) {
                 dataSearch = search
                 if (network == true){
                     Log.d("Data Search",dataSearch.text)
+                    val seacher = "%${dataSearch.text}%"
 //                    Handler(Looper.getMainLooper()).postDelayed({
 //                        navController.navigate("SearchFragment")
 //                    }, 5000)
@@ -47,4 +53,20 @@ fun SearchFragment(navController: NavController, network: Boolean) {
         )
         Spacer(modifier = Modifier.height(8.dp))
     }
+}
+
+
+fun searchDataFromDb(search: String, context : Context){
+    val search ="%$search%"
+    DataRepository(context).getDatabaseResponseLiveData()?.observe(Utils.getLifeCycleOwner(), object :
+        Observer<List<DatabaseModel>> {
+        override fun onChanged(data: List<DatabaseModel>?) {
+            if (data == null){
+                return
+            }
+
+
+        }
+
+    })
 }

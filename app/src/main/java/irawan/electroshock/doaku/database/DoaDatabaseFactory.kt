@@ -12,6 +12,7 @@ abstract class DoaDatabaseFactory : RoomDatabase() {
 
     companion object {
         private var INSTANCE: DoaDatabaseFactory? = null
+
         fun getDatabaseInstance(context: Context): DoaDatabaseFactory {
             if (INSTANCE == null) {
                 INSTANCE = Room.databaseBuilder(

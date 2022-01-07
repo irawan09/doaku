@@ -7,7 +7,9 @@ import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
+import androidx.lifecycle.Observer
 import dagger.hilt.android.AndroidEntryPoint
+import irawan.electroshock.doaku.model.DatabaseModel
 import irawan.electroshock.doaku.ui.theme.DoakuTheme
 import irawan.electroshock.doaku.utils.NetworkMonitor
 import irawan.electroshock.doaku.utils.Utils
@@ -29,7 +31,7 @@ class MainActivity : ComponentActivity() {
                     setContent {
                         DoakuTheme {
                             Surface(color = MaterialTheme.colors.background) {
-                                    NavigationController(data, network)
+                                    NavigationController(this, network, data)
 
                             }
                         }
@@ -41,7 +43,7 @@ class MainActivity : ComponentActivity() {
                     setContent {
                         DoakuTheme {
                             Surface(color = MaterialTheme.colors.background) {
-                                    NavigationController(it, network)
+                                    NavigationController(this, network, it)
                             }
                         }
                     }

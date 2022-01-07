@@ -1,5 +1,6 @@
 package irawan.electroshock.doaku.view
 
+import android.content.Context
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -19,7 +20,7 @@ import irawan.electroshock.doaku.view.fragment.SearchFragment
 
 @ExperimentalCoilApi
 @Composable
-fun DoaListFragment(navController: NavController, data: List<DatabaseModel>, network: Boolean){
+fun DoaListFragment(context: Context, network: Boolean, navController: NavController, data: List<DatabaseModel> ){
 
     fun navigateToDetails(databaseModel: DatabaseModel) {
         val doaJson = Gson().toJson(databaseModel)
@@ -28,7 +29,7 @@ fun DoaListFragment(navController: NavController, data: List<DatabaseModel>, net
 
     Column(modifier = Modifier
         .fillMaxWidth()) {
-        SearchFragment(navController, network)
+        SearchFragment(context, network, navController)
         LazyColumn {
             items(data.size){ index ->
                 Card ( elevation = 8.dp, modifier = Modifier

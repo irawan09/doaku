@@ -7,6 +7,7 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import irawan.electroshock.doaku.database.DoaDatabaseFactory
 import irawan.electroshock.doaku.model.DatabaseModel
 import irawan.electroshock.doaku.repository.DataRepository
+import irawan.electroshock.doaku.utils.Utils
 import kotlinx.coroutines.launch
 
 class DataViewModel @ViewModelInject constructor(@ApplicationContext application : Context) : ViewModel() {
@@ -19,8 +20,7 @@ class DataViewModel @ViewModelInject constructor(@ApplicationContext application
         viewModelScope.launch {
             dataRepository = DataRepository(application)
             remoteResponseLiveData = dataRepository.getDoaResponseLiveData()
-
-            databaseResponseData = DoaDatabaseFactory.getDatabaseInstance(context = application).doaDao().getAllDoa()
+            databaseResponseData = dataRepository.getDatabaseResponseLiveData()
         }
     }
 

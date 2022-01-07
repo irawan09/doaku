@@ -14,11 +14,13 @@ import kotlinx.coroutines.withContext
 
 class DataRepository(context: Context) {
     private var doaResponseLiveData : MutableLiveData<List<DatabaseModel>>? = null
+    private var databaseResponseData : LiveData<List<DatabaseModel>>? = null
     private var doaArray : ArrayList<DatabaseModel> = ArrayList()
 
     init {
         doaResponseLiveData = MutableLiveData<List<DatabaseModel>>()
-        loadAllData(context = context)
+        loadAllData(context)
+        databaseResponseData = DoaDatabaseFactory.getDatabaseInstance(context).doaDao().getAllDoa()
     }
 
     private fun loadAllData(context: Context){
@@ -60,5 +62,9 @@ class DataRepository(context: Context) {
 
     fun getDoaResponseLiveData() : LiveData<List<DatabaseModel>>? {
         return doaResponseLiveData
+    }
+
+    fun getDatabaseResponseLiveData() : LiveData<List<DatabaseModel>>?{
+        return databaseResponseData
     }
 }

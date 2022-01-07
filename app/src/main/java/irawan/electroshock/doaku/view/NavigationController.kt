@@ -1,5 +1,6 @@
 package irawan.electroshock.doaku.view
 
+import android.content.Context
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -12,15 +13,15 @@ import irawan.electroshock.doaku.view.fragment.SearchFragment
 
 
 @Composable
-fun NavigationController(data: List<DatabaseModel>, network : Boolean) {
+fun NavigationController( context: Context, network : Boolean, data: List<DatabaseModel>) {
     val navController = rememberNavController()
 
     NavHost(navController = navController, startDestination = "DoaListFragment" ){
         composable("DoaListFragment"){
-            DoaListFragment(navController = navController, data, network)
+            DoaListFragment(context, network, navController, data)
         }
         composable("SearchFragment"){
-            SearchFragment(navController = navController, network)
+            SearchFragment(context, network, navController)
         }
         composable("DoaDetailsFragment/{doa}", arguments = listOf(navArgument("doa"){
            type = NavType.StringType
