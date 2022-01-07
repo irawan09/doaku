@@ -8,7 +8,6 @@ import androidx.activity.viewModels
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import dagger.hilt.android.AndroidEntryPoint
-import irawan.electroshock.doaku.database.DoaDatabaseFactory
 import irawan.electroshock.doaku.ui.theme.DoakuTheme
 import irawan.electroshock.doaku.utils.NetworkMonitor
 import irawan.electroshock.doaku.utils.Utils
@@ -38,8 +37,7 @@ class MainActivity : ComponentActivity() {
                 })
             } else{
                 Toast.makeText(this,"Data from Database !!", Toast.LENGTH_LONG).show()
-                val db = DoaDatabaseFactory.getDatabaseInstance(context = this).doaDao().getAllDoa()
-                db.observe(this, {
+                dataViewModel.getDatabaseResponseLiveData()?.observe(this, {
                     setContent {
                         DoakuTheme {
                             Surface(color = MaterialTheme.colors.background) {
