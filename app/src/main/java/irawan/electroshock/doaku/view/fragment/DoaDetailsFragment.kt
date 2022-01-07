@@ -1,6 +1,5 @@
 package irawan.electroshock.doaku.view
 
-import android.util.Log
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
 import androidx.compose.material.Text
@@ -16,7 +15,6 @@ import irawan.electroshock.doaku.model.DatabaseModel
 
 @Composable
 fun DoaDetailsFragment(navController: NavController, databaseModel: DatabaseModel){
-    Log.d("Data", databaseModel.toString())
     Column(modifier = Modifier
         .fillMaxWidth()
         .padding(vertical = 8.dp)
@@ -40,8 +38,7 @@ fun DoaDetailsFragment(navController: NavController, databaseModel: DatabaseMode
                     .padding(vertical = 8.dp)
                     .wrapContentSize(Alignment.TopEnd),
                     fontSize = 22.sp,
-                    fontWeight = FontWeight(10)
-                )
+                    fontWeight = FontWeight(10))
 
                 Text(text = databaseModel.latin, modifier = Modifier
                     .fillMaxWidth()
