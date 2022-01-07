@@ -1,8 +1,6 @@
 package irawan.electroshock.doaku.view.fragment
 
 import android.content.Context
-import android.os.Handler
-import android.os.Looper
 import android.util.Log
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardOptions
@@ -16,12 +14,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import irawan.electroshock.doaku.database.DoaDatabaseFactory
-import irawan.electroshock.doaku.model.DatabaseModel
-import irawan.electroshock.doaku.repository.DataRepository
 import irawan.electroshock.doaku.utils.Utils
 
 @Composable
@@ -55,7 +49,6 @@ fun SearchFragment(context: Context, network: Boolean, navController: NavControl
         Spacer(modifier = Modifier.height(8.dp))
     }
 }
-
 
 fun searchDataFromDb(search: String, context : Context, navController: NavController){
     val search ="%$search%"
