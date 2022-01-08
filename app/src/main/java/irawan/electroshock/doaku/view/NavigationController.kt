@@ -2,6 +2,7 @@ package irawan.electroshock.doaku.view
 
 import android.content.Context
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -12,6 +13,7 @@ import irawan.electroshock.doaku.model.DatabaseModel
 import irawan.electroshock.doaku.view.fragment.SearchFragment
 
 
+@ExperimentalComposeUiApi
 @Composable
 fun NavigationController( context: Context, network : Boolean, data: List<DatabaseModel>) {
     val navController = rememberNavController()
