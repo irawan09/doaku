@@ -7,6 +7,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
+import androidx.compose.ui.ExperimentalComposeUiApi
 import dagger.hilt.android.AndroidEntryPoint
 import irawan.electroshock.doaku.ui.theme.DoakuTheme
 import irawan.electroshock.doaku.utils.NetworkMonitor
@@ -19,6 +20,7 @@ class MainActivity : ComponentActivity() {
     private val dataViewModel : DataViewModel by viewModels<DataViewModel>()
     private lateinit var networkMonitor : NetworkMonitor
 
+    @OptIn(ExperimentalComposeUiApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Utils.setLifeCycleOwner(this)
