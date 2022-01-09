@@ -9,6 +9,7 @@ import androidx.compose.material.Card
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
@@ -19,6 +20,7 @@ import irawan.electroshock.doaku.model.DatabaseModel
 import irawan.electroshock.doaku.view.fragment.SearchButton
 import irawan.electroshock.doaku.view.fragment.SearchFragment
 
+@ExperimentalComposeUiApi
 @ExperimentalCoilApi
 @Composable
 fun DoaListFragment(context: Context, network: Boolean, navController: NavController, data: List<DatabaseModel> ){
