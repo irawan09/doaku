@@ -32,7 +32,6 @@ class MainActivity : ComponentActivity() {
                         DoakuTheme {
                             Surface(color = MaterialTheme.colors.background) {
                                     NavigationController(this, network, data)
-
                             }
                         }
                     }
