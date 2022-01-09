@@ -27,7 +27,7 @@ import irawan.electroshock.doaku.utils.Utils
 
 @ExperimentalComposeUiApi
 @Composable
-fun SearchFragment(context: Context, network: Boolean, navController: NavController) {
+fun SearchButton(context: Context, network: Boolean, navController: NavController) {
     var dataSearch by remember { mutableStateOf(TextFieldValue("")) }
     val keyboardController = LocalSoftwareKeyboardController.current
 

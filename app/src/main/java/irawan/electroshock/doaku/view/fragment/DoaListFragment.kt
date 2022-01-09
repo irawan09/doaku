@@ -17,7 +17,7 @@ import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
 import com.google.gson.Gson
 import irawan.electroshock.doaku.model.DatabaseModel
-import irawan.electroshock.doaku.view.fragment.SearchFragment
+import irawan.electroshock.doaku.view.fragment.SearchButton
 
 @ExperimentalComposeUiApi
 @ExperimentalCoilApi
@@ -31,7 +31,7 @@ fun DoaListFragment(context: Context, network: Boolean, navController: NavContro
 
     Column(modifier = Modifier
         .fillMaxWidth()) {
-        SearchFragment(context, network, navController)
+        SearchButton(context, network, navController)
         LazyColumn {
             items(data.size){ index ->
                 Card ( elevation = 8.dp, modifier = Modifier
