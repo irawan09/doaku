@@ -20,23 +20,14 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-<<<<<<< HEAD
-import coil.annotation.ExperimentalCoilApi
-=======
->>>>>>> 67488e193448f0c8eeff5327579c6770a30d9356
 import com.google.gson.Gson
 import irawan.electroshock.doaku.database.DoaDatabaseFactory
 import irawan.electroshock.doaku.model.DatabaseModel
 import irawan.electroshock.doaku.utils.Utils
-import irawan.electroshock.doaku.view.DoaListFragment
 
 @ExperimentalComposeUiApi
 @Composable
-<<<<<<< HEAD
-fun SearchButton(context: Context, network: Boolean, navController: NavController) {
-=======
 fun SearchFragment(context: Context, network: Boolean, navController: NavController) {
->>>>>>> 67488e193448f0c8eeff5327579c6770a30d9356
     var dataSearch by remember { mutableStateOf(TextFieldValue("")) }
     val keyboardController = LocalSoftwareKeyboardController.current
 
@@ -57,20 +48,6 @@ fun SearchFragment(context: Context, network: Boolean, navController: NavControl
             ),
             onValueChange = { search ->
                 dataSearch = search
-<<<<<<< HEAD
-                if (network == true){
-                    Log.d("Data Search",dataSearch.text)
-//                    Handler(Looper.getMainLooper()).postDelayed({
-//                        navController.navigate("SearchFragment")
-//                    }, 10000)
-
-                }else{
-                    Log.d("Database Search", dataSearch.text)
-                    searchDataFromDb(dataSearch.text, context, navController)
-
-                }
-=======
->>>>>>> 67488e193448f0c8eeff5327579c6770a30d9356
             },
             keyboardActions = KeyboardActions(
                 onSearch = { KeyboardActions(
@@ -93,26 +70,3 @@ fun SearchFragment(context: Context, network: Boolean, navController: NavControl
         Spacer(modifier = Modifier.height(8.dp))
     }
 }
-<<<<<<< HEAD
-
-@ExperimentalCoilApi
-@Composable
-fun SearchFragment(context: Context, network: Boolean, navController: NavController, databaseModel: List<DatabaseModel>){
-        DoaListFragment(context, network, navController, databaseModel)
-}
-
-fun searchDataFromDb(search: String, context : Context, navController: NavController){
-    val data ="%$search%"
-    fun listOfSearch(databaseModel: List<DatabaseModel>) {
-        val doaJson = Gson().toJson(databaseModel)
-//        navController.navigate("SearchFragment/$doaJson")
-    }
-    DoaDatabaseFactory.getDatabaseInstance(context).doaDao().getDoaName(data).observe(Utils.getLifeCycleOwner(), {
-        Log.d("Database Search", it.toString())
-        listOfSearch(it)
-//        Handler(Looper.getMainLooper()).postDelayed({
-//            navController.navigate("SearchFragment") }, 10000)
-    })
-}
-=======
->>>>>>> 67488e193448f0c8eeff5327579c6770a30d9356
