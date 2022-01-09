@@ -1,11 +1,16 @@
 package irawan.electroshock.doaku.view
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.Button
+import androidx.compose.material.Icon
+import androidx.compose.material.OutlinedButton
 import androidx.compose.material.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -17,9 +22,15 @@ import irawan.electroshock.doaku.model.DatabaseModel
 fun DoaDetailsFragment(navController: NavController, databaseModel: DatabaseModel){
     Column(modifier = Modifier
         .fillMaxWidth()
-        .padding(vertical = 8.dp)
-        .wrapContentSize(Alignment.Center)) {
+        .wrapContentSize(Alignment.TopStart)) {
+        OutlinedButton(border = BorderStroke(0.dp, Color.Transparent),
+            onClick = { navController.navigate("DoaListFragment") },
+            modifier = Modifier
+            .wrapContentWidth()) {
+            Icon(imageVector = Icons.Default.ArrowBack, contentDescription = null)
+        }
         Box(modifier = Modifier
+            .padding(vertical = 4.dp)
             .wrapContentSize(Alignment.Center)) {
             Column(modifier = Modifier
                 .fillMaxWidth()
@@ -55,13 +66,6 @@ fun DoaDetailsFragment(navController: NavController, databaseModel: DatabaseMode
                     fontSize = 14.sp,
                     fontWeight = FontWeight.Normal)
             }
-        }
-        Button(onClick = { navController.navigate("DoaListFragment") }, modifier = Modifier
-            .fillMaxWidth()
-            .padding(horizontal = 150.dp)) {
-            Text(text = "Kembali", modifier = Modifier
-                .fillMaxWidth()
-                .wrapContentSize(Alignment.Center))
         }
     }
 
