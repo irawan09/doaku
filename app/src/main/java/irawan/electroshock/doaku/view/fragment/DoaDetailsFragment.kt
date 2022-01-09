@@ -68,5 +68,4 @@ fun DoaDetailsFragment(navController: NavController, databaseModel: DatabaseMode
             }
         }
     }
-
 }
