@@ -15,11 +15,15 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import coil.annotation.ExperimentalCoilApi
+import com.google.gson.Gson
 import irawan.electroshock.doaku.database.DoaDatabaseFactory
+import irawan.electroshock.doaku.model.DatabaseModel
 import irawan.electroshock.doaku.utils.Utils
+import irawan.electroshock.doaku.view.DoaListFragment
 
 @Composable
-fun SearchFragment(context: Context, network: Boolean, navController: NavController ) {
+fun SearchButton(context: Context, network: Boolean, navController: NavController) {
     var dataSearch by remember { mutableStateOf(TextFieldValue("")) }
     return Column() {
         OutlinedTextField(
@@ -32,7 +36,7 @@ fun SearchFragment(context: Context, network: Boolean, navController: NavControl
                     Log.d("Data Search",dataSearch.text)
 //                    Handler(Looper.getMainLooper()).postDelayed({
 //                        navController.navigate("SearchFragment")
-//                    }, 5000)
+//                    }, 10000)
 
                 }else{
                     Log.d("Database Search", dataSearch.text)
@@ -50,10 +54,22 @@ fun SearchFragment(context: Context, network: Boolean, navController: NavControl
     }
 }
 
+@ExperimentalCoilApi
+@Composable
+fun SearchFragment(context: Context, network: Boolean, navController: NavController, databaseModel: List<DatabaseModel>){
+        DoaListFragment(context, network, navController, databaseModel)
+}
+
 fun searchDataFromDb(search: String, context : Context, navController: NavController){
-    val search ="%$search%"
-    DoaDatabaseFactory.getDatabaseInstance(context).doaDao().getDoaName(search).observe(Utils.getLifeCycleOwner(), {
+    val data ="%$search%"
+    fun listOfSearch(databaseModel: List<DatabaseModel>) {
+        val doaJson = Gson().toJson(databaseModel)
+//        navController.navigate("SearchFragment/$doaJson")
+    }
+    DoaDatabaseFactory.getDatabaseInstance(context).doaDao().getDoaName(data).observe(Utils.getLifeCycleOwner(), {
         Log.d("Database Search", it.toString())
-//        navController.navigate("SearchFragment")
+        listOfSearch(it)
+//        Handler(Looper.getMainLooper()).postDelayed({
+//            navController.navigate("SearchFragment") }, 10000)
     })
 }
