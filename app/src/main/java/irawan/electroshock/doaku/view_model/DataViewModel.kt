@@ -21,6 +21,11 @@ class DataViewModel @ViewModelInject constructor(@ApplicationContext application
             dataRepository = DataRepository(application)
             remoteResponseLiveData = dataRepository.getDoaResponseLiveData()
             databaseResponseData = dataRepository.getDatabaseResponseLiveData()
+
+            fun searchRemoteDoa(context: Context, query: String): LiveData<DatabaseModel>? {
+                dataRepository.SearchDoa(context, query)
+                return dataRepository.getDoaResponseSearchLiveData()
+            }
         }
     }
 

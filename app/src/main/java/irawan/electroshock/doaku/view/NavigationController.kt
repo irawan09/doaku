@@ -12,6 +12,7 @@ import coil.annotation.ExperimentalCoilApi
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import irawan.electroshock.doaku.model.DatabaseModel
+import irawan.electroshock.doaku.view.fragment.RemoteSearchFragment
 import irawan.electroshock.doaku.view_model.DataViewModel
 
 
@@ -24,6 +25,14 @@ fun NavigationController( context: Context, network : Boolean, dataViewModel: Da
     NavHost(navController = navController, startDestination = "DoaListFragment" ){
         composable("DoaListFragment"){
             DoaListFragment(context, network, navController, dataViewModel, data)
+        }
+        composable("RemoteSearchFragment/{remoteSearch}", arguments = listOf(navArgument("remoteSearch"){
+            type = NavType.StringType
+        })){ backStackEntry ->
+            backStackEntry.arguments?.getString("remoteSearch").let { json ->
+                val searchRemote : DatabaseModel = Gson().fromJson(json, DatabaseModel::class.java )
+                RemoteSearchFragment(context, network, navController, dataViewModel, searchRemote)
+            }
         }
         composable("SearchFragment/{searchDatabase}", arguments = listOf(navArgument("searchDatabase"){
             type = NavType.StringType
