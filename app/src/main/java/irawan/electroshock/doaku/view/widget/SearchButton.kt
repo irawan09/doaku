@@ -1,4 +1,4 @@
-package irawan.electroshock.doaku.view.fragment
+package irawan.electroshock.doaku.view.widget
 
 import android.content.Context
 import androidx.compose.foundation.background

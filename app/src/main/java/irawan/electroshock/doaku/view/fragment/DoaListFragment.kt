@@ -1,4 +1,4 @@
-package irawan.electroshock.doaku.view
+package irawan.electroshock.doaku.view.fragment
 
 import android.content.Context
 import androidx.compose.foundation.Image
@@ -19,7 +19,7 @@ import coil.annotation.ExperimentalCoilApi
 import com.google.accompanist.coil.rememberCoilPainter
 import com.google.gson.Gson
 import irawan.electroshock.doaku.model.DatabaseModel
-import irawan.electroshock.doaku.view.fragment.SearchButton
+import irawan.electroshock.doaku.view.widget.SearchButton
 import irawan.electroshock.doaku.view_model.DataViewModel
 
 @ExperimentalComposeUiApi

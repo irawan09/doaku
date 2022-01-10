@@ -12,6 +12,8 @@ import coil.annotation.ExperimentalCoilApi
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import irawan.electroshock.doaku.model.DatabaseModel
+import irawan.electroshock.doaku.view.fragment.DoaDetailsFragment
+import irawan.electroshock.doaku.view.fragment.DoaListFragment
 import irawan.electroshock.doaku.view.fragment.RemoteSearchFragment
 import irawan.electroshock.doaku.view_model.DataViewModel
 

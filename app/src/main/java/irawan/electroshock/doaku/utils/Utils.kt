@@ -7,7 +7,6 @@ import android.os.Build
 import androidx.lifecycle.LifecycleOwner
 
 class Utils {
-
     companion object{
         private lateinit var lifecycleOwner : LifecycleOwner
 
@@ -37,5 +36,4 @@ class Utils {
             }
         }
     }
-
 }
