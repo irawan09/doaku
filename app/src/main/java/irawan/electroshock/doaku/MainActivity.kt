@@ -37,7 +37,7 @@ class MainActivity : ComponentActivity() {
                     }
                 })
             } else{
-                Toast.makeText(this,"Data from Database !!", Toast.LENGTH_LONG).show()
+                Toast.makeText(this,"Load Data from Database !!", Toast.LENGTH_LONG).show()
                 dataViewModel.getDatabaseResponseLiveData()?.observe(this, {
                     setContent {
                         DoakuTheme {
