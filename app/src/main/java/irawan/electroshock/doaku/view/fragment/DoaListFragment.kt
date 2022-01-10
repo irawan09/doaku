@@ -71,8 +71,5 @@ fun DoaListFragment(context: Context, network: Boolean, navController: NavContro
                 }
             }
         }
-
     }
-
-
 }
