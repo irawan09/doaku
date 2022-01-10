@@ -9,7 +9,6 @@ import androidx.activity.viewModels
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.ui.ExperimentalComposeUiApi
-import coil.annotation.ExperimentalCoilApi
 import dagger.hilt.android.AndroidEntryPoint
 import irawan.electroshock.doaku.model.DatabaseModel
 import irawan.electroshock.doaku.ui.theme.DoakuTheme
@@ -42,7 +41,6 @@ class MainActivity : ComponentActivity() {
         })
     }
 
-    @OptIn(ExperimentalCoilApi::class)
     private fun layout(context : Context, network : Boolean, data: List<DatabaseModel>){
         setContent {
             DoakuTheme {
