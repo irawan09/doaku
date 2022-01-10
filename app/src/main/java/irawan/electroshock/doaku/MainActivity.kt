@@ -33,7 +33,7 @@ class MainActivity : ComponentActivity() {
                     layout(this, network, remote)
                 })
             } else{
-                Toast.makeText(this,"Load Data from Database !!", Toast.LENGTH_LONG).show()
+                Toast.makeText(this,"Load Data from Database !!", Toast.LENGTH_SHORT).show()
                 dataViewModel.getDatabaseResponseLiveData()?.observe(this, { db ->
                     layout(this, network, db)
                 })
