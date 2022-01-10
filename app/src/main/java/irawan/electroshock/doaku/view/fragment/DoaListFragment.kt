@@ -16,7 +16,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import coil.annotation.ExperimentalCoilApi
-import coil.compose.rememberImagePainter
+import com.google.accompanist.coil.rememberCoilPainter
 import com.google.gson.Gson
 import irawan.electroshock.doaku.model.DatabaseModel
 import irawan.electroshock.doaku.view.fragment.SearchButton
@@ -52,16 +52,15 @@ fun DoaListFragment(context: Context, network: Boolean, navController: NavContro
                             verticalAlignment = Alignment.CenterVertically,
                             horizontalArrangement = Arrangement.Start
                         ) {
-                            Image(painter = rememberImagePainter(
-                                data = "https://freeislamiccalligraphy.com/wp-content/uploads/2013/06/Allah-Square-Kufic.jpg",
-                                builder = {}),
+                            Image(painter = rememberCoilPainter(
+                                request = "https://freeislamiccalligraphy.com/wp-content/uploads/2013/06/Allah-Square-Kufic.jpg",
+                                fadeIn = true),
                                 contentDescription = null,
                                 modifier = Modifier
                                     .height(64.dp)
                                     .width(64.dp))
 
                             Column(modifier = Modifier
-                                .padding(16.dp)
                                 .fillMaxWidth()) {
                                 val doaName = data[index].doa
                                 Text(text = doaName)

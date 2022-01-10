@@ -8,12 +8,15 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.Icon
 import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Text
+import androidx.compose.material.TextFieldDefaults
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.*
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Color.Companion.Blue
+import androidx.compose.ui.graphics.Color.Companion.Gray
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
@@ -71,6 +74,9 @@ fun SearchButton(context: Context, network: Boolean, navController: NavControlle
                     }
                 }),
             label = { Text(text = "Search") },
+            colors = TextFieldDefaults.outlinedTextFieldColors(
+                focusedBorderColor = Blue,
+                unfocusedBorderColor = Gray),
             placeholder = { Text(text = "Enter your search") },
             modifier = Modifier
                 .fillMaxWidth()
