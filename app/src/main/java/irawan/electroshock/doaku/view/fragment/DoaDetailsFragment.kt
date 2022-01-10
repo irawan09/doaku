@@ -7,6 +7,8 @@ import androidx.compose.material.OutlinedButton
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.KeyboardArrowLeft
+import androidx.compose.material.icons.filled.KeyboardArrowRight
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -26,8 +28,9 @@ fun DoaDetailsFragment(navController: NavController, databaseModel: DatabaseMode
         OutlinedButton(border = BorderStroke(0.dp, Color.Transparent),
             onClick = { navController.navigate("DoaListFragment") },
             modifier = Modifier
-            .wrapContentWidth()) {
-            Icon(imageVector = Icons.Default.ArrowBack, contentDescription = null)
+                .wrapContentWidth()
+                .wrapContentSize(Alignment.TopStart)) {
+            Icon(imageVector = Icons.Default.KeyboardArrowLeft, contentDescription = null)
         }
         Box(modifier = Modifier
             .padding(vertical = 4.dp)
