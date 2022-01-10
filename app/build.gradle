@@ -79,8 +79,8 @@ dependencies {
     implementation "android.arch.lifecycle:extensions:$lifecycle_extensions"
     implementation "androidx.activity:activity-ktx:$activity_ktx"
     implementation "com.google.dagger:hilt-android:$hilt_android"
-    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt"
-    kapt "androidx.hilt:hilt-compiler:$hilt"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$rootProject.hilt"
+    kapt "androidx.hilt:hilt-compiler:$rootProject.hilt"
     kapt "com.google.dagger:hilt-android-compiler:$hilt_android_compiler"
     implementation "androidx.navigation:navigation-fragment-ktx:$navigation_fragment_ktx"
 
