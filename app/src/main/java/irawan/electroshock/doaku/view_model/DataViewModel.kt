@@ -7,7 +7,6 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import irawan.electroshock.doaku.database.DoaDatabaseFactory
 import irawan.electroshock.doaku.model.DatabaseModel
 import irawan.electroshock.doaku.repository.DataRepository
-import irawan.electroshock.doaku.utils.Utils
 import kotlinx.coroutines.launch
 
 class DataViewModel @ViewModelInject constructor(@ApplicationContext application : Context) : ViewModel() {
@@ -15,6 +14,7 @@ class DataViewModel @ViewModelInject constructor(@ApplicationContext application
     private lateinit var dataRepository : DataRepository
     private var remoteResponseLiveData : LiveData<List<DatabaseModel>>? = null
     private var databaseResponseData : LiveData<List<DatabaseModel>>? = null
+    private lateinit var searchDatabaseDoa : LiveData<List<DatabaseModel>>
 
     init{
         viewModelScope.launch {
@@ -22,6 +22,17 @@ class DataViewModel @ViewModelInject constructor(@ApplicationContext application
             remoteResponseLiveData = dataRepository.getDoaResponseLiveData()
             databaseResponseData = dataRepository.getDatabaseResponseLiveData()
         }
+    }
+
+    fun searchRemoteDoa(context: Context, query: String): LiveData<DatabaseModel>? {
+        dataRepository.SearchDoa(context, query)
+        return dataRepository.getDoaResponseSearchLiveData()
+    }
+
+    fun searchDatabaseDoa(context: Context, query: String) : LiveData<List<DatabaseModel>> {
+        val search ="%${query}%"
+        searchDatabaseDoa = DoaDatabaseFactory.getDatabaseInstance(context).doaDao().getDoaName(search)
+        return searchDatabaseDoa
     }
 
     fun getRemoteResponseLiveData() : LiveData<List<DatabaseModel>>? {

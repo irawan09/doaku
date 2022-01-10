@@ -41,11 +41,11 @@ class MainActivity : ComponentActivity() {
         })
     }
 
-    private fun layout(context : Context, network : Boolean, dataViewModel: List<DatabaseModel>){
+    private fun layout(context : Context, network : Boolean, data: List<DatabaseModel>){
         setContent {
             DoakuTheme {
                 Surface(color = MaterialTheme.colors.background) {
-                    NavigationController(context, network, dataViewModel)
+                    NavigationController(context, network, dataViewModel, data)
                 }
             }
         }

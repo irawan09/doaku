@@ -12,24 +12,25 @@ import coil.annotation.ExperimentalCoilApi
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import irawan.electroshock.doaku.model.DatabaseModel
+import irawan.electroshock.doaku.view_model.DataViewModel
 
 
 @ExperimentalCoilApi
 @ExperimentalComposeUiApi
 @Composable
-fun NavigationController( context: Context, network : Boolean, data: List<DatabaseModel>) {
+fun NavigationController( context: Context, network : Boolean, dataViewModel: DataViewModel, data: List<DatabaseModel>) {
     val navController = rememberNavController()
 
     NavHost(navController = navController, startDestination = "DoaListFragment" ){
         composable("DoaListFragment"){
-            DoaListFragment(context, network, navController, data)
+            DoaListFragment(context, network, navController, dataViewModel, data)
         }
         composable("SearchFragment/{searchDatabase}", arguments = listOf(navArgument("searchDatabase"){
             type = NavType.StringType
         })){ backStackEntry ->
             backStackEntry.arguments?.getString("searchDatabase").let{ json ->
                 val search : List<DatabaseModel> = GsonBuilder().create().fromJson(json, Array<DatabaseModel>::class.java).toList()
-                DoaListFragment(context, network, navController, search)
+                DoaListFragment(context, network, navController,dataViewModel, search)
             }
         }
         composable("DoaDetailsFragment/{doa}", arguments = listOf(navArgument("doa"){

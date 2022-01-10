@@ -12,5 +12,5 @@ interface DataService {
     suspend fun getAllData() : Response<List<SerializedModel>>
 
     @GET("/api/doa/{search}")
-    fun geSearchByDoa(@Path(value = "search", encoded = true) name: String?): Response<List<SerializedModel>>
+    suspend fun geSearchByDoa(@Path(value = "search", encoded = true) name: String?): Response<SerializedModel>
 }

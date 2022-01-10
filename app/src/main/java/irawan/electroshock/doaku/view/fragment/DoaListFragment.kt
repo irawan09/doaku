@@ -21,11 +21,12 @@ import coil.compose.rememberImagePainter
 import com.google.gson.Gson
 import irawan.electroshock.doaku.model.DatabaseModel
 import irawan.electroshock.doaku.view.fragment.SearchButton
+import irawan.electroshock.doaku.view_model.DataViewModel
 
 @ExperimentalComposeUiApi
 @ExperimentalCoilApi
 @Composable
-fun DoaListFragment(context: Context, network: Boolean, navController: NavController, data: List<DatabaseModel> ){
+fun DoaListFragment(context: Context, network: Boolean, navController: NavController, dataViewModel: DataViewModel, data: List<DatabaseModel> ){
 
     fun navigateToDetails(databaseModel: DatabaseModel) {
         val doaJson = Gson().toJson(databaseModel)
@@ -37,7 +38,7 @@ fun DoaListFragment(context: Context, network: Boolean, navController: NavContro
         .fillMaxHeight()) {
         Column(modifier = Modifier
             .fillMaxWidth()) {
-            SearchButton(context, network, navController)
+            SearchButton(context, network, navController, dataViewModel)
             LazyColumn {
                 items(data.size){ index ->
                     Card ( elevation = 16.dp, modifier = Modifier

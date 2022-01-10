@@ -15,13 +15,13 @@ import kotlinx.coroutines.withContext
 
 class DataRepository(context: Context) {
     private var doaResponseLiveData : MutableLiveData<List<DatabaseModel>>? = null
-    private var doaResponseSearchLiveData : MutableLiveData<List<DatabaseModel>>? = null
+    private var doaResponseSearchLiveData : MutableLiveData<DatabaseModel>? = null
     private var databaseResponseData : LiveData<List<DatabaseModel>>? = null
     private var doaArray : ArrayList<DatabaseModel> = ArrayList()
 
     init {
         doaResponseLiveData = MutableLiveData<List<DatabaseModel>>()
-        doaResponseSearchLiveData = MutableLiveData<List<DatabaseModel>>()
+        doaResponseSearchLiveData = MutableLiveData<DatabaseModel>()
         loadAllData(context)
         databaseResponseData = DoaDatabaseFactory.getDatabaseInstance(context).doaDao().getAllDoa()
     }
@@ -70,18 +70,31 @@ class DataRepository(context: Context) {
             withContext(Dispatchers.Main){
                 if (response.isSuccessful){
                     val data = response.body()
-                    val gson = GsonBuilder().setPrettyPrinting().create()
-                    val prettyJson = gson.toJson(data)
-                    Log.d("Pretty JSON response ", prettyJson)
+                    if (data != null){
+                        val id = data.id ?: "N/A"
+                        val doa = data.doa ?: "N/A"
+                        val ayat = data.ayat ?: "N/A"
+                        val latin = data.latin ?: "N/A"
+                        val artinya = data.artinya ?: "N/A"
+
+                        val dataDoaSearch =
+                            DatabaseModel(
+                                id = id,
+                                doa = doa,
+                                ayat = ayat,
+                                latin = latin,
+                                artinya = artinya
+                            )
+                        doaResponseSearchLiveData?.postValue(dataDoaSearch)
+                    }
                 } else {
                     Log.e("Status", "Retrofit Error ${response.code()}")
                 }
             }
-
         }
     }
 
-    fun getDoaResponseSearchLiveData(): LiveData<List<DatabaseModel>>? {
+    fun getDoaResponseSearchLiveData(): LiveData<DatabaseModel>? {
         return doaResponseSearchLiveData
     }
 

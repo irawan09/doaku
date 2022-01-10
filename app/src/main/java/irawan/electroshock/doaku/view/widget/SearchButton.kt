@@ -26,10 +26,11 @@ import com.google.gson.Gson
 import irawan.electroshock.doaku.database.DoaDatabaseFactory
 import irawan.electroshock.doaku.model.DatabaseModel
 import irawan.electroshock.doaku.utils.Utils
+import irawan.electroshock.doaku.view_model.DataViewModel
 
 @ExperimentalComposeUiApi
 @Composable
-fun SearchButton(context: Context, network: Boolean, navController: NavController) {
+fun SearchButton(context: Context, network: Boolean, navController: NavController, dataViewModel: DataViewModel) {
     var dataSearch by remember { mutableStateOf(TextFieldValue("")) }
     val keyboardController = LocalSoftwareKeyboardController.current
 
@@ -54,11 +55,14 @@ fun SearchButton(context: Context, network: Boolean, navController: NavControlle
             keyboardActions = KeyboardActions(
                 onSearch = { KeyboardActions(
                     onSearch = {keyboardController?.hide()})
-                    if (network == true){
-                        Log.d("Data Search",dataSearch.text)
+                    if (network){
+                        val observerData = dataViewModel.searchRemoteDoa(context, dataSearch.text)
+                        observerData?.observe(Utils.getLifeCycleOwner(), { data ->
+                            Log.d("Search Remote Data", data.toString())
+                        })
                     }else{
-                        val search ="%${dataSearch.text}%"
-                        DoaDatabaseFactory.getDatabaseInstance(context).doaDao().getDoaName(search).observe(Utils.getLifeCycleOwner(), { data ->
+                        val observerData = dataViewModel.searchDatabaseDoa(context, dataSearch.text)
+                        observerData.observe(Utils.getLifeCycleOwner(), { data ->
                             getSearchDatabase(data)
                         })
                     }
