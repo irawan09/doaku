@@ -47,7 +47,7 @@ fun NavigationController( context: Context, network : Boolean, dataViewModel: Da
         })){ backStackEntry ->
             backStackEntry.arguments?.getString("doa")?.let { json ->
                 val doa = Gson().fromJson(json,DatabaseModel::class.java)
-                DoaDetailsFragment(navController = navController, doa)
+                DoaDetailsFragment(navController, doa)
             }
         }
     }
