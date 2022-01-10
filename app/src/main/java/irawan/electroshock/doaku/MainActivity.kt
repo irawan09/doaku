@@ -29,13 +29,13 @@ class MainActivity : ComponentActivity() {
         networkMonitor = NetworkMonitor(this)
         networkMonitor.observe(this, { network ->
             if(network == true){
-                dataViewModel.getRemoteResponseLiveData()?.observe(this, { data ->
-                    layout(this, network, data)
+                dataViewModel.getRemoteResponseLiveData()?.observe(this, { remote ->
+                    layout(this, network, remote)
                 })
             } else{
                 Toast.makeText(this,"Load Data from Database !!", Toast.LENGTH_LONG).show()
-                dataViewModel.getDatabaseResponseLiveData()?.observe(this, {
-                    layout(this, network, it)
+                dataViewModel.getDatabaseResponseLiveData()?.observe(this, { db ->
+                    layout(this, network, db)
                 })
             }
         })

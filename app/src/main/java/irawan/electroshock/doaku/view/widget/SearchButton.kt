@@ -56,8 +56,8 @@ fun SearchButton(context: Context, network: Boolean, navController: NavControlle
                         Log.d("Data Search",dataSearch.text)
                     }else{
                         val search ="%${dataSearch.text}%"
-                        DoaDatabaseFactory.getDatabaseInstance(context).doaDao().getDoaName(search).observe(Utils.getLifeCycleOwner(), {
-                            getSearchDatabase(it)
+                        DoaDatabaseFactory.getDatabaseInstance(context).doaDao().getDoaName(search).observe(Utils.getLifeCycleOwner(), { data ->
+                            getSearchDatabase(data)
                         })
                     }
                 }),
