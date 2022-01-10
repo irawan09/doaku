@@ -81,7 +81,7 @@ dependencies {
     implementation "com.google.dagger:hilt-android:$hilt_android"
     implementation "androidx.hilt:hilt-lifecycle-viewmodel:$rootProject.hilt"
     kapt "androidx.hilt:hilt-compiler:$rootProject.hilt"
-    kapt "com.google.dagger:hilt-android-compiler:$hilt_android_compiler"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_android"
     implementation "androidx.navigation:navigation-fragment-ktx:$navigation_fragment_ktx"
 
     testImplementation 'junit:junit:4.13.2'
