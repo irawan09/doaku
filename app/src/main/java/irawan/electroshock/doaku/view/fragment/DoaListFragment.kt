@@ -40,7 +40,7 @@ fun DoaListFragment(context: Context, network: Boolean, navController: NavContro
             SearchButton(context, network, navController)
             LazyColumn {
                 items(data.size){ index ->
-                    Card ( elevation = 8.dp, modifier = Modifier
+                    Card ( elevation = 16.dp, modifier = Modifier
                         .fillMaxWidth()
                         .fillMaxHeight()
                         .padding(horizontal = 16.dp, vertical = 4.dp)
