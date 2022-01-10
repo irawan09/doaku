@@ -2,6 +2,7 @@ package irawan.electroshock.doaku.view.fragment
 
 import android.content.Context
 import android.util.Log
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
@@ -13,6 +14,7 @@ import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.*
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
@@ -36,7 +38,7 @@ fun SearchButton(context: Context, network: Boolean, navController: NavControlle
         navController.navigate("SearchFragment/$doaJson")
     }
 
-    Column() {
+    Column(Modifier.background(Color.White)) {
         OutlinedTextField(
             value = dataSearch,
             leadingIcon = { Icon(imageVector = Icons.Default.Search, contentDescription = null) },
