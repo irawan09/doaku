@@ -15,7 +15,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import coil.annotation.ExperimentalCoilApi
-import com.google.accompanist.coil.rememberCoilPainter
+import coil.compose.LocalImageLoader
+import coil.compose.rememberImagePainter
 import com.google.gson.Gson
 import irawan.electroshock.doaku.model.DatabaseModel
 import irawan.electroshock.doaku.view.widget.SearchButton
@@ -51,9 +52,12 @@ fun RemoteSearchFragment(context: Context, network: Boolean, navController: NavC
                         verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.Start
                     ) {
-                        Image(painter = rememberCoilPainter(
-                            request = "https://freeislamiccalligraphy.com/wp-content/uploads/2013/06/Allah-Square-Kufic.jpg",
-                            fadeIn = true),
+                        Image(painter = rememberImagePainter(
+                            data = "https://freeislamiccalligraphy.com/wp-content/uploads/2013/06/Allah-Square-Kufic.jpg",
+                            imageLoader = LocalImageLoader.current,
+                            builder = {
+                                crossfade(true)
+                            }),
                             contentDescription = null,
                             modifier = Modifier
                                 .height(64.dp)
