@@ -8,6 +8,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.Card
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
+import androidx.compose.material.ripple.R
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.ExperimentalComposeUiApi
@@ -33,9 +34,20 @@ fun DoaListFragment(context: Context, network: Boolean, navController: NavContro
         navController.navigate("DoaDetailsFragment/$doaJson")
     }
 
-    Scaffold(backgroundColor = Color.LightGray, modifier = Modifier
+    Scaffold(backgroundColor = Color(0xFFCECECE), modifier = Modifier
         .fillMaxWidth()
         .fillMaxHeight()) {
+        Image(painter = rememberImagePainter(
+            data = "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.transparentpng.com%2Fthumb%2Fislam%2FOt4Dke-islam-vector.png",
+            imageLoader = LocalImageLoader.current,
+            builder = {
+                crossfade(true)
+            }
+        ),
+            contentDescription = null,
+            modifier = Modifier
+                .fillMaxHeight()
+                .fillMaxWidth())
         Column(modifier = Modifier
             .fillMaxWidth()) {
             SearchButton(context, network, navController, dataViewModel)
