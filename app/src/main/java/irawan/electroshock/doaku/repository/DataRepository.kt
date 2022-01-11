@@ -62,7 +62,7 @@ class DataRepository(context: Context) {
         }
     }
 
-    fun SearchDoa(context: Context, query : String){
+    fun searchDoa(context: Context, query : String){
         val service = ServiceProvider(context).createService()
         CoroutineScope(Dispatchers.IO).launch{
             val response = service.geSearchByDoa(query)
