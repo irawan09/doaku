@@ -22,7 +22,6 @@ import irawan.electroshock.doaku.model.DatabaseModel
 import irawan.electroshock.doaku.view.widget.SearchButton
 import irawan.electroshock.doaku.view_model.DataViewModel
 
-
 @ExperimentalComposeUiApi
 @ExperimentalCoilApi
 @Composable
