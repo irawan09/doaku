@@ -21,8 +21,7 @@ import irawan.electroshock.doaku.model.DatabaseModel
 @Composable
 fun DoaDetailsFragment(navController: NavController, databaseModel: DatabaseModel){
     Column(modifier = Modifier
-        .fillMaxWidth()
-        .wrapContentSize(Alignment.TopStart)) {
+        .fillMaxWidth()) {
         OutlinedButton(border = BorderStroke(0.dp, Color.Transparent),
             onClick = { navController.navigate("DoaListFragment") },
             modifier = Modifier
@@ -35,8 +34,7 @@ fun DoaDetailsFragment(navController: NavController, databaseModel: DatabaseMode
             .wrapContentSize(Alignment.Center)) {
             Column(modifier = Modifier
                 .fillMaxWidth()
-                .padding(8.dp)
-                .wrapContentSize(Alignment.Center)) {
+                .padding(8.dp)) {
 
                 Text(text = databaseModel.doa, modifier = Modifier
                     .fillMaxWidth()
