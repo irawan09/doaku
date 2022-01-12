@@ -29,10 +29,10 @@ import com.airbnb.lottie.compose.*
 @Composable
 fun DoaDetailsFragment(navController: NavController, databaseModel: DatabaseModel){
 
-    var isPlaying by remember {
+    val isPlaying by remember {
         mutableStateOf(true)
     }
-    var speed by remember {
+    val speed by remember {
         mutableStateOf(1f)
     }
     val composition by rememberLottieComposition(
