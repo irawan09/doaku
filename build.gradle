@@ -15,8 +15,6 @@ buildscript {
         lifecycle_extensions ='1.1.1'
         activity_ktx = '1.4.0'
         navigation_fragment_ktx = '2.3.5'
-        hilt_android = '2.28-alpha'
-        hilt = '1.0.0-alpha02'
         lottie = '4.0.0'
     }
     repositories {
