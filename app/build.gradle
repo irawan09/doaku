@@ -82,6 +82,7 @@ dependencies {
     kapt "androidx.hilt:hilt-compiler:$rootProject.hilt"
     kapt "com.google.dagger:hilt-android-compiler:$hilt_android_compiler"
     implementation "androidx.navigation:navigation-fragment-ktx:$navigation_fragment_ktx"
+    implementation "com.airbnb.android:lottie-compose:$lottie"
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
