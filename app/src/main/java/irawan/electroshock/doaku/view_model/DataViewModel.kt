@@ -1,34 +1,30 @@
 package irawan.electroshock.doaku.view_model
 
 import android.content.Context
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
 import dagger.hilt.android.lifecycle.HiltViewModel
-import dagger.hilt.android.qualifiers.ApplicationContext
 import irawan.electroshock.doaku.database.DoaDatabaseFactory
 import irawan.electroshock.doaku.model.DatabaseModel
-import irawan.electroshock.doaku.repository.DataRepository
+import irawan.electroshock.doaku.di.DataRepository
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class DataViewModel @Inject constructor(@ApplicationContext application : Context) : ViewModel() {
+class DataViewModel @Inject constructor(private val dataRepository: DataRepository) : ViewModel() {
 
-    private lateinit var dataRepository : DataRepository
     private var remoteResponseLiveData : LiveData<List<DatabaseModel>>? = null
     private var databaseResponseData : LiveData<List<DatabaseModel>>? = null
     private lateinit var searchDatabaseDoa : LiveData<List<DatabaseModel>>
 
     init{
         viewModelScope.launch {
-            dataRepository = DataRepository(application)
             remoteResponseLiveData = dataRepository.getDoaResponseLiveData()
             databaseResponseData = dataRepository.getDatabaseResponseLiveData()
         }
     }
 
-    fun searchRemoteDoa(context: Context, query: String): LiveData<DatabaseModel>? {
-        dataRepository.searchDoa(context, query)
+    fun searchRemoteDoa(query: String): LiveData<DatabaseModel>? {
+        dataRepository.searchDoa(query)
         return dataRepository.getDoaResponseSearchLiveData()
     }
 

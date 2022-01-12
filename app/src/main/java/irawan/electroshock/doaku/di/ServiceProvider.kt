@@ -1,14 +1,17 @@
-package irawan.electroshock.doaku.api
+package irawan.electroshock.doaku.di
 
 import android.content.Context
 import com.google.gson.GsonBuilder
+import dagger.hilt.android.qualifiers.ApplicationContext
+import irawan.electroshock.doaku.api.DataService
 import irawan.electroshock.doaku.utils.Utils
 import okhttp3.Cache
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Inject
 
-class ServiceProvider(context: Context) {
+class ServiceProvider @Inject constructor(@ApplicationContext context: Context) {
     private val  cacheSize = (5*1024*1024).toLong()
     private val myCache = Cache(context.cacheDir, cacheSize)
 

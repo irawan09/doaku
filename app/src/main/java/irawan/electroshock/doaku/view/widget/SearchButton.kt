@@ -3,7 +3,6 @@ package irawan.electroshock.doaku.view.widget
 import android.content.Context
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.Icon
@@ -64,7 +63,7 @@ fun SearchButton(context: Context, network: Boolean, navController: NavControlle
                 onSearch = { KeyboardActions(
                     onSearch = {keyboardController?.hide()})
                     if (network){
-                        val observerData = dataViewModel.searchRemoteDoa(context, dataSearch.text)
+                        val observerData = dataViewModel.searchRemoteDoa(dataSearch.text)
                         observerData?.observe(Utils.getLifeCycleOwner(), { data ->
                             getRemoteSearchData(data)
                         })

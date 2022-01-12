@@ -1,18 +1,22 @@
-package irawan.electroshock.doaku.repository
+package irawan.electroshock.doaku.di
 
 import android.content.Context
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import irawan.electroshock.doaku.api.ServiceProvider
+import dagger.hilt.android.qualifiers.ApplicationContext
 import irawan.electroshock.doaku.database.DoaDatabaseFactory
 import irawan.electroshock.doaku.model.DatabaseModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
-class DataRepository(context: Context) {
+class DataRepository @Inject constructor(
+    @ApplicationContext context: Context,
+    private val serviceProvider: ServiceProvider) {
+
     private var doaResponseLiveData : MutableLiveData<List<DatabaseModel>>? = null
     private var doaResponseSearchLiveData : MutableLiveData<DatabaseModel>? = null
     private var databaseResponseData : LiveData<List<DatabaseModel>>? = null
@@ -62,8 +66,8 @@ class DataRepository(context: Context) {
         }
     }
 
-    fun searchDoa(context: Context, query : String){
-        val service = ServiceProvider(context).createService()
+    fun searchDoa(query : String){
+        val service = serviceProvider.createService()
         CoroutineScope(Dispatchers.IO).launch{
             val response = service.geSearchByDoa(query)
             withContext(Dispatchers.Main){
