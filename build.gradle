@@ -16,6 +16,9 @@ buildscript {
         activity_ktx = '1.4.0'
         navigation_fragment_ktx = '2.3.5'
         lottie = '4.0.0'
+        hilt = "2.40.5"
+        hilt_androidx = "1.0.0-alpha03"
+        hilt_compiler = "1.0.0"
     }
     repositories {
         google()
