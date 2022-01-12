@@ -30,7 +30,7 @@ class DataRepository @Inject constructor(
     }
 
     private fun loadAllData(context: Context){
-        val service = ServiceProvider(context).createService()
+        val service = serviceProvider.createService()
         val db = DoaDatabaseFactory.getDatabaseInstance(context = context)
         CoroutineScope(Dispatchers.IO).launch{
             val response = service.getAllData()

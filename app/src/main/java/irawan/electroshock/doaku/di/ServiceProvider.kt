@@ -11,7 +11,8 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Inject
 
-class ServiceProvider @Inject constructor(@ApplicationContext context: Context) {
+class ServiceProvider @Inject constructor(@ApplicationContext private var context : Context) {
+
     private val  cacheSize = (5*1024*1024).toLong()
     private val myCache = Cache(context.cacheDir, cacheSize)
 
