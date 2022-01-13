@@ -1,4 +1,4 @@
-package irawan.electroshock.doaku.view
+package irawan.electroshock.doaku.view.navigation
 
 import android.content.Context
 import androidx.compose.runtime.Composable

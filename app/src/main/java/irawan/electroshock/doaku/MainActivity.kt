@@ -14,7 +14,7 @@ import irawan.electroshock.doaku.model.DatabaseModel
 import irawan.electroshock.doaku.ui.theme.DoakuTheme
 import irawan.electroshock.doaku.utils.NetworkMonitor
 import irawan.electroshock.doaku.utils.Utils
-import irawan.electroshock.doaku.view.NavigationController
+import irawan.electroshock.doaku.view.navigation.NavigationController
 import irawan.electroshock.doaku.view_model.DataViewModel
 
 @ExperimentalComposeUiApi
