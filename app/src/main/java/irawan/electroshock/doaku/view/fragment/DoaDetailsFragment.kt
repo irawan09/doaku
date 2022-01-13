@@ -60,7 +60,6 @@ fun Animation(){
                 .padding(vertical = 16.dp)
                 .wrapContentSize(Alignment.BottomCenter))
     }
-
 }
 
 @Composable
