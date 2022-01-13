@@ -8,7 +8,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.airbnb.lottie.compose.*
 import androidx.compose.animation.core.Animatable
-import androidx.compose.animation.core.animateIntOffsetAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.runtime.*
 import androidx.navigation.NavController
@@ -32,6 +31,7 @@ fun SplashScreen(navController: NavController){
         )
         delay(4000L)
         navController.navigate("DoaListFragment")
+
     }
 
     val isPlaying by remember {
