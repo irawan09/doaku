@@ -1,38 +1,27 @@
 package irawan.electroshock.doaku.view.widget
 
-import android.view.animation.OvershootInterpolator
 import irawan.electroshock.doaku.R
 import androidx.compose.foundation.layout.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.airbnb.lottie.compose.*
-import androidx.compose.animation.core.Animatable
-import androidx.compose.animation.core.tween
 import androidx.compose.runtime.*
 import androidx.navigation.NavController
 import kotlinx.coroutines.delay
 
 @Composable
-fun SplashScreen(navController: NavController){
-    val scale = remember {
-     Animatable(0f)
-    }
-    
+fun AnimatedSplashScreen(navController: NavController){
     LaunchedEffect(key1 = true){
-        scale.animateTo(
-            targetValue = 0.3f,
-            animationSpec = tween(
-                durationMillis = 1000,
-                easing = {
-                    OvershootInterpolator(2f).getInterpolation(it)
-                }
-            )
-        )
-        delay(4000L)
+        delay(3000L)
+        navController.popBackStack()
         navController.navigate("DoaListFragment")
-
     }
+    SplashScreen()
+}
+
+@Composable
+fun SplashScreen(){
 
     val isPlaying by remember {
         mutableStateOf(true)

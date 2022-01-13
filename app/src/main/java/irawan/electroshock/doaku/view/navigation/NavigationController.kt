@@ -15,6 +15,7 @@ import irawan.electroshock.doaku.model.DatabaseModel
 import irawan.electroshock.doaku.view.fragment.DoaDetailsFragment
 import irawan.electroshock.doaku.view.fragment.DoaListFragment
 import irawan.electroshock.doaku.view.fragment.RemoteSearchFragment
+import irawan.electroshock.doaku.view.widget.AnimatedSplashScreen
 import irawan.electroshock.doaku.view.widget.SplashScreen
 import irawan.electroshock.doaku.view_model.DataViewModel
 
@@ -27,7 +28,7 @@ fun NavigationController( context: Context, network : Boolean, dataViewModel: Da
 
     NavHost(navController = navController, startDestination = "SplashScreen" ){
         composable("SplashScreen"){
-            SplashScreen(navController = navController)
+            AnimatedSplashScreen(navController = navController)
         }
         composable("DoaListFragment"){
             DoaListFragment(context, network, navController, dataViewModel, data)
