@@ -28,11 +28,8 @@ import irawan.electroshock.doaku.model.DatabaseModel
 import irawan.electroshock.doaku.view.widget.SearchButton
 import irawan.electroshock.doaku.view_model.DataViewModel
 
-@ExperimentalComposeUiApi
-@ExperimentalCoilApi
 @Composable
-fun DoaListFragment(context: Context, network: Boolean, navController: NavController, dataViewModel: DataViewModel, data: List<DatabaseModel> ){
-
+fun AnimationBackground(){
     var isPlaying by remember {
         mutableStateOf(true)
     }
@@ -49,28 +46,36 @@ fun DoaListFragment(context: Context, network: Boolean, navController: NavContro
         speed = speed,
         restartOnPlay = false)
 
+    Box(
+        contentAlignment = Alignment.Center,
+        modifier = Modifier
+            .fillMaxWidth()
+            .fillMaxHeight()
+            .clip(RoundedCornerShape(10.dp))
+            .background(Color.Transparent)
+            .padding(vertical = 8.dp)
+    ){
+        LottieAnimation(composition = composition,
+            progress = progress,
+            modifier = Modifier
+                .size(400.dp)
+                .padding(vertical = 16.dp)
+                .wrapContentSize(Alignment.BottomCenter))
+    }
+}
+
+@ExperimentalComposeUiApi
+@ExperimentalCoilApi
+@Composable
+fun DoaListFragment(context: Context, network: Boolean, navController: NavController, dataViewModel: DataViewModel, data: List<DatabaseModel> ){
+
     fun navigateToDetails(databaseModel: DatabaseModel) {
         val doaJson = Gson().toJson(databaseModel)
         navController.navigate("DoaDetailsFragment/$doaJson")
     }
 
     Scaffold(backgroundColor = Color(0xFFCECECE)) {
-        Box(
-            contentAlignment = Alignment.Center,
-            modifier = Modifier
-                .fillMaxWidth()
-                .fillMaxHeight()
-                .clip(RoundedCornerShape(10.dp))
-                .background(Color.Transparent)
-                .padding(vertical = 8.dp)
-        ){
-            LottieAnimation(composition = composition,
-                progress = progress,
-                modifier = Modifier
-                    .size(400.dp)
-                    .padding(vertical = 16.dp)
-                    .wrapContentSize(Alignment.BottomCenter))
-        }
+        AnimationBackground()
         Column(modifier = Modifier
             .fillMaxWidth()) {
             SearchButton(context, network, navController, dataViewModel)

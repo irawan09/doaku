@@ -25,10 +25,8 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.draw.clip
 import com.airbnb.lottie.compose.*
 
-
 @Composable
-fun DoaDetailsFragment(navController: NavController, databaseModel: DatabaseModel){
-
+fun Animation(){
     val isPlaying by remember {
         mutableStateOf(true)
     }
@@ -44,6 +42,29 @@ fun DoaDetailsFragment(navController: NavController, databaseModel: DatabaseMode
         isPlaying = isPlaying,
         speed = speed,
         restartOnPlay = false)
+
+    Box(
+        contentAlignment = Alignment.Center,
+        modifier = Modifier
+            .fillMaxWidth()
+            .fillMaxHeight()
+            .clip(RoundedCornerShape(10.dp))
+            .background(Color.Transparent)
+            .padding(vertical = 8.dp)
+    ){
+        LottieAnimation(
+            composition = composition,
+            progress = progress,
+            modifier = Modifier
+                .size(400.dp)
+                .padding(vertical = 16.dp)
+                .wrapContentSize(Alignment.BottomCenter))
+    }
+
+}
+
+@Composable
+fun DoaDetailsFragment(navController: NavController, databaseModel: DatabaseModel){
 
     Column(modifier = Modifier
         .fillMaxWidth()) {
@@ -91,22 +112,6 @@ fun DoaDetailsFragment(navController: NavController, databaseModel: DatabaseMode
                     fontWeight = FontWeight.Normal)
             }
         }
-        Box(
-            contentAlignment = Alignment.Center,
-            modifier = Modifier
-                .fillMaxWidth()
-                .fillMaxHeight()
-                .clip(RoundedCornerShape(10.dp))
-                .background(Color.Transparent)
-                .padding(vertical = 8.dp)
-        ){
-            LottieAnimation(
-                composition = composition,
-                progress = progress,
-                modifier = Modifier
-                    .size(400.dp)
-                    .padding(vertical = 16.dp)
-                    .wrapContentSize(Alignment.BottomCenter))
-        }
+        Animation()
     }
 }
