@@ -18,7 +18,6 @@ import irawan.electroshock.doaku.view.fragment.RemoteSearchFragment
 import irawan.electroshock.doaku.view.widget.AnimatedSplashScreen
 import irawan.electroshock.doaku.view_model.DataViewModel
 
-
 @ExperimentalCoilApi
 @ExperimentalComposeUiApi
 @Composable
