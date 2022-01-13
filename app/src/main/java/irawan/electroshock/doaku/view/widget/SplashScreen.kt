@@ -47,5 +47,4 @@ fun SplashScreen(){
                     .padding(vertical = 16.dp)
                     .wrapContentSize(Alignment.BottomCenter))
     }
-
 }
