@@ -100,7 +100,8 @@ fun DoaDetailsFragment(navController: NavController, databaseModel: DatabaseMode
                 .background(Color.Transparent)
                 .padding(vertical = 8.dp)
         ){
-            LottieAnimation(composition = composition,
+            LottieAnimation(
+                composition = composition,
                 progress = progress,
                 modifier = Modifier
                     .size(400.dp)
