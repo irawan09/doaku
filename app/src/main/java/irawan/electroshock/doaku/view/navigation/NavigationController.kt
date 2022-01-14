@@ -1,8 +1,6 @@
 package irawan.electroshock.doaku.view.navigation
 
 import android.content.Context
-import android.widget.Toast
-import androidx.compose.foundation.layout.Column
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.platform.LocalContext
