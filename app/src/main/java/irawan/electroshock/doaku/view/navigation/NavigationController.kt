@@ -1,6 +1,7 @@
 package irawan.electroshock.doaku.view.navigation
 
 import android.content.Context
+import android.widget.Toast
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.navigation.NavType
@@ -26,6 +27,7 @@ fun NavigationController( context: Context, network : Boolean, dataViewModel: Da
 
     NavHost(navController = navController, startDestination = "SplashScreen" ){
         composable("SplashScreen"){
+            Toast.makeText(context, "Aktifkan Internet Anda ! ", Toast.LENGTH_LONG).show()
             AnimatedSplashScreen(navController = navController)
         }
         composable("DoaListFragment"){
