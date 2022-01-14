@@ -2,8 +2,10 @@ package irawan.electroshock.doaku.view.navigation
 
 import android.content.Context
 import android.widget.Toast
+import androidx.compose.foundation.layout.Column
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.ExperimentalComposeUiApi
+import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -22,12 +24,12 @@ import irawan.electroshock.doaku.view_model.DataViewModel
 @ExperimentalCoilApi
 @ExperimentalComposeUiApi
 @Composable
-fun NavigationController( context: Context, network : Boolean, dataViewModel: DataViewModel, data: List<DatabaseModel>) {
-    val navController = rememberNavController()
+fun NavigationController(network : Boolean, dataViewModel: DataViewModel, data: List<DatabaseModel>) {
+   val context : Context = LocalContext.current
+   val navController = rememberNavController()
 
     NavHost(navController = navController, startDestination = "SplashScreen" ){
         composable("SplashScreen"){
-            Toast.makeText(context, "Aktifkan Internet Anda ! ", Toast.LENGTH_LONG).show()
             AnimatedSplashScreen(navController = navController)
         }
         composable("DoaListFragment"){

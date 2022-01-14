@@ -30,22 +30,22 @@ class MainActivity : ComponentActivity() {
         networkMonitor.observe(this, { network ->
             if(network == true){
                 dataViewModel.getRemoteResponseLiveData()?.observe(this, { remote ->
-                    layout(this, network, remote)
+                    layout(network, remote)
                 })
             } else{
-                Toast.makeText(this,"Load Data from Database !!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,"Ambil data pada database !!", Toast.LENGTH_SHORT).show()
                 dataViewModel.getDatabaseResponseLiveData()?.observe(this, { db ->
-                    layout(this, network, db)
+                    layout(network, db)
                 })
             }
         })
     }
 
-    private fun layout(context : Context, network : Boolean, data: List<DatabaseModel>){
+    private fun layout(network : Boolean, data: List<DatabaseModel>){
         setContent {
             DoakuTheme {
                 Surface(color = MaterialTheme.colors.background) {
-                    NavigationController(context, network, dataViewModel, data)
+                    NavigationController(network, dataViewModel, data)
                 }
             }
         }
