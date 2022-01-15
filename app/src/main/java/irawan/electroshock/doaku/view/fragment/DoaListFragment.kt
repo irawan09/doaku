@@ -30,10 +30,10 @@ import irawan.electroshock.doaku.view_model.DataViewModel
 
 @Composable
 fun AnimationBackground(){
-    var isPlaying by remember {
+    val isPlaying by remember {
         mutableStateOf(true)
     }
-    var speed by remember {
+    val speed by remember {
         mutableStateOf(1f)
     }
     val composition by rememberLottieComposition(
