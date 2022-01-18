@@ -19,6 +19,7 @@ import coil.compose.LocalImageLoader
 import coil.compose.rememberImagePainter
 import com.google.gson.Gson
 import irawan.electroshock.doaku.model.DatabaseModel
+import irawan.electroshock.doaku.view.widget.CardView
 import irawan.electroshock.doaku.view.widget.SearchButton
 import irawan.electroshock.doaku.view_model.DataViewModel
 
@@ -26,51 +27,13 @@ import irawan.electroshock.doaku.view_model.DataViewModel
 @ExperimentalCoilApi
 @Composable
 fun RemoteSearchFragment(context: Context, network: Boolean, navController: NavController, dataViewModel: DataViewModel, data: DatabaseModel){
-
-    fun navigateToDetails(databaseModel: DatabaseModel) {
-        val doaJson = Gson().toJson(databaseModel)
-        navController.navigate("DoaDetailsFragment/$doaJson")
-    }
-
     Scaffold(backgroundColor = Color.LightGray, modifier = Modifier
         .fillMaxWidth()
         .fillMaxHeight()) {
         Column(modifier = Modifier
             .fillMaxWidth()) {
             SearchButton(context, network, navController, dataViewModel)
-            Column() {
-                Card ( elevation = 16.dp, modifier = Modifier
-                    .fillMaxWidth()
-                    .fillMaxHeight()
-                    .padding(horizontal = 16.dp, vertical = 4.dp)
-                    .wrapContentSize(Alignment.TopStart)
-                    .clickable {
-                        navigateToDetails(data)
-                    }) {
-                    Row(
-                        verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.Start
-                    ) {
-                        Image(painter = rememberImagePainter(
-                            data = "https://freeislamiccalligraphy.com/wp-content/uploads/2013/06/Allah-Square-Kufic.jpg",
-                            imageLoader = LocalImageLoader.current,
-                            builder = {
-                                crossfade(true)
-                            }),
-                            contentDescription = null,
-                            modifier = Modifier
-                                .height(64.dp)
-                                .width(64.dp))
-
-                        Column(modifier = Modifier
-                            .padding(16.dp)
-                            .fillMaxWidth()) {
-                            val doaName = data.doa
-                            Text(text = doaName)
-                        }
-                    }
-                }
-            }
+            CardView(navController, data)
         }
     }
 }
