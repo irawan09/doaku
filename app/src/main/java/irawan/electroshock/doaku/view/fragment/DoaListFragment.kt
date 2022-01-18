@@ -6,6 +6,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.Scaffold
@@ -28,12 +29,79 @@ import irawan.electroshock.doaku.model.DatabaseModel
 import irawan.electroshock.doaku.view.widget.SearchButton
 import irawan.electroshock.doaku.view_model.DataViewModel
 
+
+
+@ExperimentalComposeUiApi
+@ExperimentalCoilApi
+@Composable
+fun DoaListFragment(context: Context, network: Boolean, navController: NavController, dataViewModel: DataViewModel, data: List<DatabaseModel> ){
+
+    fun navigateToDetails(databaseModel: DatabaseModel) {
+        val doaJson = Gson().toJson(databaseModel)
+        navController.navigate("DoaDetailsFragment/$doaJson")
+    }
+
+    Scaffold(backgroundColor = Color(0xFFCECECE)) {
+        AnimationBackground()
+        Column(modifier = Modifier
+            .fillMaxWidth()) {
+            SearchButton(context, network, navController, dataViewModel)
+            LazyColumn {
+                items(data.size){ index ->
+                    Card (elevation = 16.dp, modifier = Modifier
+                        .fillMaxWidth()
+                        .fillMaxHeight()
+                        .padding(horizontal = 16.dp, vertical = 4.dp)
+                        .wrapContentSize(Alignment.TopStart)
+                        .clickable {
+                            navigateToDetails(data[index])
+                        }) {
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.Start
+                        ) {
+                            CardPicture()
+                            CardText(data[index].doa)
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@Composable
+fun CardPicture(){
+    Card(shape = CircleShape) {
+        Image(painter = rememberImagePainter(
+            data = "https://freeislamiccalligraphy.com/wp-content/uploads/2013/06/Allah-Square-Kufic.jpg",
+            imageLoader = LocalImageLoader.current,
+            builder = {
+                crossfade(true)
+            }
+        ),
+            contentDescription = null,
+            modifier = Modifier
+                .height(64.dp)
+                .width(64.dp))
+    }
+}
+
+@Composable
+fun CardText(doaName : String){
+    Column(modifier = Modifier
+        .fillMaxWidth()) {
+        Text(text = doaName)
+    }
+}
+
 @Composable
 fun AnimationBackground(){
-    var isPlaying by remember {
+    val isPlaying by remember {
         mutableStateOf(true)
     }
-    var speed by remember {
+    val speed by remember {
         mutableStateOf(1f)
     }
     val composition by rememberLottieComposition(
@@ -61,59 +129,5 @@ fun AnimationBackground(){
                 .size(400.dp)
                 .padding(vertical = 16.dp)
                 .wrapContentSize(Alignment.BottomCenter))
-    }
-}
-
-@ExperimentalComposeUiApi
-@ExperimentalCoilApi
-@Composable
-fun DoaListFragment(context: Context, network: Boolean, navController: NavController, dataViewModel: DataViewModel, data: List<DatabaseModel> ){
-
-    fun navigateToDetails(databaseModel: DatabaseModel) {
-        val doaJson = Gson().toJson(databaseModel)
-        navController.navigate("DoaDetailsFragment/$doaJson")
-    }
-
-    Scaffold(backgroundColor = Color(0xFFCECECE)) {
-        AnimationBackground()
-        Column(modifier = Modifier
-            .fillMaxWidth()) {
-            SearchButton(context, network, navController, dataViewModel)
-            LazyColumn {
-                items(data.size){ index ->
-                    Card ( elevation = 16.dp, modifier = Modifier
-                        .fillMaxWidth()
-                        .fillMaxHeight()
-                        .padding(horizontal = 16.dp, vertical = 4.dp)
-                        .wrapContentSize(Alignment.TopStart)
-                        .clickable {
-                            navigateToDetails(data[index])
-                        }) {
-                        Row(
-                            verticalAlignment = Alignment.CenterVertically,
-                            horizontalArrangement = Arrangement.Start
-                        ) {
-                            Image(painter = rememberImagePainter(
-                                data = "https://freeislamiccalligraphy.com/wp-content/uploads/2013/06/Allah-Square-Kufic.jpg",
-                                imageLoader = LocalImageLoader.current,
-                                builder = {
-                                    crossfade(true)
-                                }
-                            ),
-                                contentDescription = null,
-                                modifier = Modifier
-                                    .height(64.dp)
-                                    .width(64.dp))
-
-                            Column(modifier = Modifier
-                                .fillMaxWidth()) {
-                                val doaName = data[index].doa
-                                Text(text = doaName)
-                            }
-                        }
-                    }
-                }
-            }
-        }
     }
 }
