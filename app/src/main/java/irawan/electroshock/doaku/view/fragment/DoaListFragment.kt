@@ -29,8 +29,6 @@ import irawan.electroshock.doaku.model.DatabaseModel
 import irawan.electroshock.doaku.view.widget.SearchButton
 import irawan.electroshock.doaku.view_model.DataViewModel
 
-
-
 @ExperimentalComposeUiApi
 @ExperimentalCoilApi
 @Composable
@@ -48,7 +46,7 @@ fun DoaListFragment(context: Context, network: Boolean, navController: NavContro
             SearchButton(context, network, navController, dataViewModel)
             LazyColumn {
                 items(data.size){ index ->
-                    Card (elevation = 16.dp, modifier = Modifier
+                    Card (shape = RoundedCornerShape(8.dp) ,elevation = 16.dp, modifier = Modifier
                         .fillMaxWidth()
                         .fillMaxHeight()
                         .padding(horizontal = 16.dp, vertical = 4.dp)
@@ -62,7 +60,6 @@ fun DoaListFragment(context: Context, network: Boolean, navController: NavContro
                         ) {
                             CardPicture()
                             CardText(data[index].doa)
-
                         }
                     }
                 }
