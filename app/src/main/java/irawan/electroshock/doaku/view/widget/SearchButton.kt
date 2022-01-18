@@ -1,14 +1,13 @@
 package irawan.electroshock.doaku.view.widget
 
 import android.content.Context
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material.Icon
-import androidx.compose.material.OutlinedTextField
-import androidx.compose.material.Text
-import androidx.compose.material.TextFieldDefaults
+import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.*
@@ -45,43 +44,48 @@ fun SearchButton(context: Context, network: Boolean, navController: NavControlle
         navController.navigate("SearchFragment/$doaJson")
     }
 
-    Column(Modifier.background(Color.White)) {
-        OutlinedTextField(
-            value = dataSearch,
-            leadingIcon = { Icon(imageVector = Icons.Default.Search, contentDescription = null) },
-            singleLine = true,
-            keyboardOptions = KeyboardOptions(
-                capitalization = KeyboardCapitalization.Sentences,
-                keyboardType = KeyboardType.Text,
-                imeAction = ImeAction.Search
-            ),
-            onValueChange = { search ->
-                dataSearch = search
-            },
-            keyboardActions = KeyboardActions(
-                onSearch = { KeyboardActions(
-                    onSearch = {keyboardController?.hide()})
-                    if (network){
-                        val observerData = dataViewModel.searchRemoteDoa(dataSearch.text)
-                        observerData?.observe(Utils.getLifeCycleOwner(), { data ->
-                            getRemoteSearchData(data)
-                        })
-                    }else{
-                        val observerData = dataViewModel.searchDatabaseDoa(context, dataSearch.text)
-                        observerData.observe(Utils.getLifeCycleOwner(), { data ->
-                            getSearchDatabase(data)
-                        })
-                    }
-                }),
-            label = { Text(text = "Search") },
-            colors = TextFieldDefaults.outlinedTextFieldColors(
-                focusedBorderColor = Blue,
-                unfocusedBorderColor = Gray),
-            placeholder = { Text(text = "Enter your search") },
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 8.dp)
-        )
-        Spacer(modifier = Modifier.height(8.dp))
+    Card(shape = RoundedCornerShape(8.dp),
+//        border = BorderStroke(1.dp, Color.White),
+        modifier = Modifier
+            .padding(8.dp)) {
+        Column(Modifier.background(Color.White)) {
+            OutlinedTextField(
+                value = dataSearch,
+                leadingIcon = { Icon(imageVector = Icons.Default.Search, contentDescription = null) },
+                singleLine = true,
+                keyboardOptions = KeyboardOptions(
+                    capitalization = KeyboardCapitalization.Sentences,
+                    keyboardType = KeyboardType.Text,
+                    imeAction = ImeAction.Search
+                ),
+                onValueChange = { search ->
+                    dataSearch = search
+                },
+                keyboardActions = KeyboardActions(
+                    onSearch = { KeyboardActions(
+                        onSearch = {keyboardController?.hide()})
+                        if (network){
+                            val observerData = dataViewModel.searchRemoteDoa(dataSearch.text)
+                            observerData?.observe(Utils.getLifeCycleOwner(), { data ->
+                                getRemoteSearchData(data)
+                            })
+                        }else{
+                            val observerData = dataViewModel.searchDatabaseDoa(context, dataSearch.text)
+                            observerData.observe(Utils.getLifeCycleOwner(), { data ->
+                                getSearchDatabase(data)
+                            })
+                        }
+                    }),
+                label = { Text(text = "Search") },
+                colors = TextFieldDefaults.outlinedTextFieldColors(
+                    focusedBorderColor = Blue,
+                    unfocusedBorderColor = Gray),
+                placeholder = { Text(text = "Enter your search") },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 8.dp)
+            )
+            Spacer(modifier = Modifier.height(8.dp))
+        }
     }
 }
