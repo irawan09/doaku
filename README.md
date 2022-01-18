@@ -17,4 +17,4 @@ The aim of this application is to offer users quick access to daily du'a. This a
 
 Credit : 
 Thanks to -> 
-<b><i>Ahmad Ramadhan</i></b> for providing an API to this App (https://doa-doa-api-ahmadramadhan.fly.dev/)
+<b><i>Ahmad Ramadhan</i></b> for providing an API for this App (https://doa-doa-api-ahmadramadhan.fly.dev/)
