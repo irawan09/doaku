@@ -48,6 +48,7 @@ fun CardView(navController: NavController, data: DatabaseModel){
 fun CardPicture(){
     Card(shape = CircleShape,
         border = BorderStroke(2.dp, Color.LightGray),
+        elevation = 4.dp,
         modifier = Modifier.padding(8.dp)) {
         Image(painter = rememberImagePainter(
             data = "https://freeislamiccalligraphy.com/wp-content/uploads/2013/06/Allah-Square-Kufic.jpg",
