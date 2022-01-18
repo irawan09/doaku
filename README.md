@@ -16,4 +16,5 @@ The aim of this application is to offer users quick access to daily du'a. This a
 14. Espresso
 
 Credit : 
-Thanks to -> <b>Ahmad Ramadhan</b> for providing an API to this App (https://doa-doa-api-ahmadramadhan.fly.dev/)
+Thanks to -> 
+<b><i>Ahmad Ramadhan</i></b> for providing an API to this App (https://doa-doa-api-ahmadramadhan.fly.dev/)
