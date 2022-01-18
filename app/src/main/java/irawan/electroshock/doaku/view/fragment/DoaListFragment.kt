@@ -34,12 +34,6 @@ import irawan.electroshock.doaku.view_model.DataViewModel
 @ExperimentalCoilApi
 @Composable
 fun DoaListFragment(context: Context, network: Boolean, navController: NavController, dataViewModel: DataViewModel, data: List<DatabaseModel> ){
-
-    fun navigateToDetails(databaseModel: DatabaseModel) {
-        val doaJson = Gson().toJson(databaseModel)
-        navController.navigate("DoaDetailsFragment/$doaJson")
-    }
-
     Scaffold(backgroundColor = Color(0xFFCECECE)) {
         AnimationBackground()
         Column(modifier = Modifier
@@ -47,24 +41,34 @@ fun DoaListFragment(context: Context, network: Boolean, navController: NavContro
             SearchButton(context, network, navController, dataViewModel)
             LazyColumn {
                 items(data.size){ index ->
-                    Card (shape = RoundedCornerShape(8.dp) ,elevation = 16.dp, modifier = Modifier
-                        .fillMaxWidth()
-                        .fillMaxHeight()
-                        .padding(horizontal = 16.dp, vertical = 4.dp)
-                        .wrapContentSize(Alignment.TopStart)
-                        .clickable {
-                            navigateToDetails(data[index])
-                        }) {
-                        Row(
-                            verticalAlignment = Alignment.CenterVertically,
-                            horizontalArrangement = Arrangement.Start
-                        ) {
-                            CardPicture()
-                            CardText(data[index].doa)
-                        }
-                    }
+                    CardView(navController = navController, data = data[index])
                 }
             }
+        }
+    }
+}
+
+@Composable
+fun CardView(navController: NavController, data: DatabaseModel){
+    fun navigateToDetails(databaseModel: DatabaseModel) {
+        val doaJson = Gson().toJson(databaseModel)
+        navController.navigate("DoaDetailsFragment/$doaJson")
+    }
+
+    Card (shape = RoundedCornerShape(8.dp) ,elevation = 16.dp, modifier = Modifier
+        .fillMaxWidth()
+        .fillMaxHeight()
+        .padding(horizontal = 16.dp, vertical = 4.dp)
+        .wrapContentSize(Alignment.TopStart)
+        .clickable {
+            navigateToDetails(data)
+        }) {
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Start
+        ) {
+            CardPicture()
+            CardText(data.doa)
         }
     }
 }
