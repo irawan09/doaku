@@ -17,8 +17,11 @@ import androidx.navigation.NavController
 import coil.annotation.ExperimentalCoilApi
 import coil.compose.LocalImageLoader
 import coil.compose.rememberImagePainter
+import com.airbnb.lottie.compose.LottieCompositionSpec
 import com.google.gson.Gson
+import irawan.electroshock.doaku.R
 import irawan.electroshock.doaku.model.DatabaseModel
+import irawan.electroshock.doaku.view.widget.Animation
 import irawan.electroshock.doaku.view.widget.CardView
 import irawan.electroshock.doaku.view.widget.SearchButton
 import irawan.electroshock.doaku.view_model.DataViewModel
@@ -30,6 +33,7 @@ fun RemoteSearchFragment(context: Context, network: Boolean, navController: NavC
     Scaffold(backgroundColor = Color.LightGray, modifier = Modifier
         .fillMaxWidth()
         .fillMaxHeight()) {
+        Animation(source = LottieCompositionSpec.RawRes(R.raw.mosque), size =400)
         Column(modifier = Modifier
             .fillMaxWidth()) {
             SearchButton(context, network, navController, dataViewModel)
