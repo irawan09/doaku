@@ -1,6 +1,7 @@
 package irawan.electroshock.doaku.view.fragment
 
 import android.content.Context
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -70,7 +71,9 @@ fun DoaListFragment(context: Context, network: Boolean, navController: NavContro
 
 @Composable
 fun CardPicture(){
-    Card(shape = CircleShape) {
+    Card(shape = CircleShape,
+        border = BorderStroke(2.dp, Color.LightGray),
+        modifier = Modifier.padding(8.dp)) {
         Image(painter = rememberImagePainter(
             data = "https://freeislamiccalligraphy.com/wp-content/uploads/2013/06/Allah-Square-Kufic.jpg",
             imageLoader = LocalImageLoader.current,
