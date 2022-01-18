@@ -1,10 +1,6 @@
 package irawan.electroshock.doaku.view.widget
 
 import irawan.electroshock.doaku.R
-import androidx.compose.foundation.layout.*
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import com.airbnb.lottie.compose.*
 import androidx.compose.runtime.*
 import androidx.navigation.NavController
