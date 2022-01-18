@@ -23,7 +23,6 @@ fun Animation(source : LottieCompositionSpec, size : Int){
         mutableStateOf(1f)
     }
     val composition by rememberLottieComposition(
-//        spec = LottieCompositionSpec.RawRes(R.raw.muslim))
         spec = source)
 
     val progress by animateLottieCompositionAsState(
