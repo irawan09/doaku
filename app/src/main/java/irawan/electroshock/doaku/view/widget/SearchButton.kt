@@ -45,7 +45,6 @@ fun SearchButton(context: Context, network: Boolean, navController: NavControlle
     }
 
     Card(shape = RoundedCornerShape(8.dp),
-//        border = BorderStroke(1.dp, Color.White),
         modifier = Modifier
             .padding(8.dp)) {
         Column(Modifier.background(Color.White)) {
