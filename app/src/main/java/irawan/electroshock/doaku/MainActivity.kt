@@ -7,9 +7,7 @@ import androidx.compose.material.Surface
 import androidx.activity.viewModels
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.material.MaterialTheme
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.ExperimentalComposeUiApi
-import androidx.compose.ui.tooling.preview.Preview
 import com.google.accompanist.pager.ExperimentalPagerApi
 import dagger.hilt.android.AndroidEntryPoint
 import irawan.electroshock.doaku.model.DatabaseModel
@@ -75,8 +73,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             DoakuTheme {
                 Surface(color = MaterialTheme.colors.background) {
-//                    OnboardingUi()
-                    NavigationController(network, dataViewModel, data)
+                    OnboardingUi()
+//                    NavigationController(network, dataViewModel, data)
                 }
             }
         }
