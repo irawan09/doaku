@@ -75,8 +75,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             DoakuTheme {
                 Surface(color = MaterialTheme.colors.background) {
-                    OnBoardingController(network, dataViewModel, data)
-//                    NavigationController(network, dataViewModel, data)
+//                    OnBoardingController(network, dataViewModel, data)
+                    NavigationController(network, dataViewModel, data)
                 }
             }
         }
