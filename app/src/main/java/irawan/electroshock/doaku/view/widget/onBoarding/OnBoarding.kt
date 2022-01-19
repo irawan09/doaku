@@ -11,6 +11,7 @@ import androidx.compose.material.OutlinedButton
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
@@ -18,23 +19,28 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.HorizontalPagerIndicator
 import com.google.accompanist.pager.rememberPagerState
+import com.google.gson.Gson
+import irawan.electroshock.doaku.model.DatabaseModel
 import irawan.electroshock.doaku.view.widget.Animation
+import irawan.electroshock.doaku.view_model.DataViewModel
 
+@ExperimentalComposeUiApi
 @ExperimentalAnimationApi
 @ExperimentalPagerApi
 @Composable
-fun OnboardingUi(
-) {
+fun OnboardingUi(navController: NavController) {
     val pagerState = rememberPagerState(pageCount = 3)
+
     Column {
         Text(text = "Skip" , modifier = Modifier
             .fillMaxWidth()
             .padding(4.dp)
-            .clickable { })
+            .clickable { navController.navigate("NavigationController") })
 
         HorizontalPager(state = pagerState , modifier = Modifier
             .fillMaxSize()
@@ -51,7 +57,7 @@ fun OnboardingUi(
             OutlinedButton(shape = RoundedCornerShape(20.dp), modifier = Modifier
                 .fillMaxWidth()
                 .padding(16.dp),
-                onClick = {},
+                onClick = { navController.navigate("NavigationController") },
                 colors = ButtonDefaults.outlinedButtonColors(
                     backgroundColor =
                     colorResource(id = R.color.purple_500),

@@ -15,6 +15,7 @@ import irawan.electroshock.doaku.ui.theme.DoakuTheme
 import irawan.electroshock.doaku.utils.NetworkMonitor
 import irawan.electroshock.doaku.utils.Utils
 import irawan.electroshock.doaku.view.navigation.NavigationController
+import irawan.electroshock.doaku.view.navigation.OnBoardingController
 import irawan.electroshock.doaku.view.widget.ShowAlertDialog
 import irawan.electroshock.doaku.view.widget.onBoarding.OnboardingUi
 import irawan.electroshock.doaku.view_model.DataViewModel
@@ -73,7 +74,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             DoakuTheme {
                 Surface(color = MaterialTheme.colors.background) {
-                    OnboardingUi()
+                    OnBoardingController(network, dataViewModel, data)
 //                    NavigationController(network, dataViewModel, data)
                 }
             }
