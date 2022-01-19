@@ -8,6 +8,7 @@ import androidx.activity.viewModels
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.material.MaterialTheme
 import androidx.compose.ui.ExperimentalComposeUiApi
+import coil.annotation.ExperimentalCoilApi
 import com.google.accompanist.pager.ExperimentalPagerApi
 import dagger.hilt.android.AndroidEntryPoint
 import irawan.electroshock.doaku.model.DatabaseModel
@@ -17,7 +18,6 @@ import irawan.electroshock.doaku.utils.Utils
 import irawan.electroshock.doaku.view.navigation.NavigationController
 import irawan.electroshock.doaku.view.navigation.OnBoardingController
 import irawan.electroshock.doaku.view.widget.ShowAlertDialog
-import irawan.electroshock.doaku.view.widget.onBoarding.OnboardingUi
 import irawan.electroshock.doaku.view_model.DataViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -30,6 +30,7 @@ class MainActivity : ComponentActivity() {
     private val dataViewModel : DataViewModel by viewModels<DataViewModel>()
     private lateinit var networkMonitor : NetworkMonitor
 
+    @ExperimentalCoilApi
     @ExperimentalAnimationApi
     @ExperimentalPagerApi
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -67,6 +68,7 @@ class MainActivity : ComponentActivity() {
         }
     }
 
+    @ExperimentalCoilApi
     @ExperimentalAnimationApi
     @ExperimentalPagerApi
     private fun layout(network : Boolean, data: List<DatabaseModel>){
