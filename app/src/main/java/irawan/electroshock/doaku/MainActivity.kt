@@ -57,7 +57,6 @@ class MainActivity : ComponentActivity() {
             })
         }
     }
-
     private fun alert(){
         setContent {
             DoakuTheme {
