@@ -40,7 +40,9 @@ fun OnboardingUi(navController: NavController) {
         Text(text = "Skip" , modifier = Modifier
             .fillMaxWidth()
             .padding(4.dp)
-            .clickable { navController.navigate("NavigationController") })
+            .clickable {
+                navController.popBackStack()
+                navController.navigate("NavigationController") })
 
         HorizontalPager(state = pagerState , modifier = Modifier
             .fillMaxSize()
@@ -57,7 +59,9 @@ fun OnboardingUi(navController: NavController) {
             OutlinedButton(shape = RoundedCornerShape(20.dp), modifier = Modifier
                 .fillMaxWidth()
                 .padding(16.dp),
-                onClick = { navController.navigate("NavigationController") },
+                onClick = {
+                    navController.popBackStack()
+                    navController.navigate("NavigationController") },
                 colors = ButtonDefaults.outlinedButtonColors(
                     backgroundColor =
                     colorResource(id = R.color.purple_500),
