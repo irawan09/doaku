@@ -1,17 +1,15 @@
 package irawan.electroshock.doaku.view.fragment
 
 import irawan.electroshock.doaku.R
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Icon
-import androidx.compose.material.OutlinedButton
+import androidx.compose.material.IconButton
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.KeyboardArrowLeft
+import androidx.compose.material.icons.outlined.KeyboardArrowLeft
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -26,12 +24,10 @@ fun DoaDetailsFragment(navController: NavController, databaseModel: DatabaseMode
 
     Column(modifier = Modifier
         .fillMaxWidth()) {
-        OutlinedButton(border = BorderStroke(0.dp, Color.Transparent),
-            onClick = { navController.navigate("DoaListFragment") },
-            modifier = Modifier
-                .wrapContentWidth()
-                .wrapContentSize(Alignment.TopStart)) {
-            Icon(imageVector = Icons.Default.KeyboardArrowLeft, contentDescription = null)
+        IconButton(onClick = { navController.navigate("DoaListFragment") },
+            modifier = Modifier.wrapContentSize(Alignment.TopStart)) {
+            Icon(imageVector = Icons.Outlined.KeyboardArrowLeft, contentDescription = null)
+
         }
         Box(modifier = Modifier
             .padding(vertical = 8.dp)

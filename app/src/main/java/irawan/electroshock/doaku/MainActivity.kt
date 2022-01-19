@@ -5,8 +5,12 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.material.Surface
 import androidx.activity.viewModels
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.material.MaterialTheme
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.ExperimentalComposeUiApi
+import androidx.compose.ui.tooling.preview.Preview
+import com.google.accompanist.pager.ExperimentalPagerApi
 import dagger.hilt.android.AndroidEntryPoint
 import irawan.electroshock.doaku.model.DatabaseModel
 import irawan.electroshock.doaku.ui.theme.DoakuTheme
@@ -14,6 +18,7 @@ import irawan.electroshock.doaku.utils.NetworkMonitor
 import irawan.electroshock.doaku.utils.Utils
 import irawan.electroshock.doaku.view.navigation.NavigationController
 import irawan.electroshock.doaku.view.widget.ShowAlertDialog
+import irawan.electroshock.doaku.view.widget.onBoarding.OnboardingUi
 import irawan.electroshock.doaku.view_model.DataViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -26,6 +31,8 @@ class MainActivity : ComponentActivity() {
     private val dataViewModel : DataViewModel by viewModels<DataViewModel>()
     private lateinit var networkMonitor : NetworkMonitor
 
+    @ExperimentalAnimationApi
+    @ExperimentalPagerApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Utils.setLifeCycleOwner(this)
@@ -62,11 +69,14 @@ class MainActivity : ComponentActivity() {
         }
     }
 
+    @ExperimentalAnimationApi
+    @ExperimentalPagerApi
     private fun layout(network : Boolean, data: List<DatabaseModel>){
         setContent {
             DoakuTheme {
                 Surface(color = MaterialTheme.colors.background) {
-                    NavigationController(network, dataViewModel, data)
+                    OnboardingUi()
+//                    NavigationController(network, dataViewModel, data)
                 }
             }
         }
