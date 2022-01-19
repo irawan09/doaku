@@ -50,11 +50,13 @@ fun OnboardingUi(
         AnimatedVisibility(visible = pagerState.currentPage == 2) {
             OutlinedButton(shape = RoundedCornerShape(20.dp), modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 8.dp),onClick = {}, colors = ButtonDefaults.outlinedButtonColors(backgroundColor = colorResource(
-                id = R.color.purple_500), colorResource(id = R.color.white))) {
-
+                .padding(16.dp),
+                onClick = {},
+                colors = ButtonDefaults.outlinedButtonColors(
+                    backgroundColor =
+                    colorResource(id = R.color.purple_500),
+                    colorResource(id = R.color.white))) {
                 Text(text = "Let's Start")
-
             }
 
         }
@@ -65,7 +67,7 @@ fun OnboardingUi(
 fun PageUi(page: Page){
     Animation(source = page.image, size = 350)
     Column(horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier.padding(top = 260.dp)) {
+        modifier = Modifier.padding(top = 270.dp)) {
         Spacer(modifier = Modifier.height(20.dp))
         Text(text = page.title,
             fontSize = 16.sp , fontWeight = FontWeight.Bold)
