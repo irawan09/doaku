@@ -1,4 +1,4 @@
-package irawan.electroshock.doaku.ui.theme
+package irawan.electroshock.doaku.view.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle

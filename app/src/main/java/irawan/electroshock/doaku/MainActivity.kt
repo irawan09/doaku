@@ -13,7 +13,7 @@ import coil.annotation.ExperimentalCoilApi
 import com.google.accompanist.pager.ExperimentalPagerApi
 import dagger.hilt.android.AndroidEntryPoint
 import irawan.electroshock.doaku.model.DatabaseModel
-import irawan.electroshock.doaku.ui.theme.DoakuTheme
+import irawan.electroshock.doaku.view.theme.DoakuTheme
 import irawan.electroshock.doaku.utils.NetworkMonitor
 import irawan.electroshock.doaku.utils.Utils
 import irawan.electroshock.doaku.view.navigation.NavigationController
