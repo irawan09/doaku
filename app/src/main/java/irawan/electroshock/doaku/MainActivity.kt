@@ -1,6 +1,7 @@
 package irawan.electroshock.doaku
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.material.Surface
@@ -19,6 +20,7 @@ import irawan.electroshock.doaku.view.navigation.NavigationController
 import irawan.electroshock.doaku.view.navigation.OnBoardingController
 import irawan.electroshock.doaku.view.widget.ShowAlertDialog
 import irawan.electroshock.doaku.view_model.DataViewModel
+import irawan.electroshock.doaku.view_model.OnBoardViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -28,6 +30,7 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     private val dataViewModel : DataViewModel by viewModels<DataViewModel>()
+    private val onBoardViewModel : OnBoardViewModel by viewModels<OnBoardViewModel>()
     private lateinit var networkMonitor : NetworkMonitor
 
     @ExperimentalCoilApi
@@ -48,7 +51,14 @@ class MainActivity : ComponentActivity() {
             networkMonitor.observe(this, { network ->
                 if(network == true){
                     dataViewModel.getRemoteResponseLiveData()?.observe(this, { remote ->
-                        layout(network, remote)
+                        onBoardViewModel.retrieveOnBoarding().observe(this, { onBoarding ->
+                            Log.d("Data Store", onBoarding.toString())
+                            if (onBoarding == true){
+                                layout(network, remote)
+                            } else {
+                                onBoardingScreen(network, onBoardViewModel, remote)
+                            }
+                        })
                     })
                 } else{
                     dataViewModel.getDatabaseResponseLiveData()?.observe(this, { db ->
@@ -70,11 +80,15 @@ class MainActivity : ComponentActivity() {
 
     @ExperimentalCoilApi
     @ExperimentalPagerApi
-    private fun onBoardingScreen(network : Boolean, data: List<DatabaseModel>){
+    private fun onBoardingScreen(
+        network : Boolean,
+        onBoardViewModel: OnBoardViewModel,
+        data: List<DatabaseModel>
+    ){
         setContent{
             DoakuTheme {
                 Surface(color = Color.White) {
-                    OnBoardingController(network, dataViewModel, data)
+                    OnBoardingController(network, dataViewModel, onBoardViewModel, data)
                 }
 
             }

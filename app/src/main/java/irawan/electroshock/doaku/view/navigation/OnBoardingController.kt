@@ -11,6 +11,7 @@ import com.google.accompanist.pager.ExperimentalPagerApi
 import irawan.electroshock.doaku.model.DatabaseModel
 import irawan.electroshock.doaku.view.widget.onBoarding.OnboardingUi
 import irawan.electroshock.doaku.view_model.DataViewModel
+import irawan.electroshock.doaku.view_model.OnBoardViewModel
 
 @ExperimentalCoilApi
 @ExperimentalPagerApi
@@ -20,6 +21,7 @@ import irawan.electroshock.doaku.view_model.DataViewModel
 fun OnBoardingController(
     network : Boolean,
     dataViewModel: DataViewModel,
+    onBoardViewModel: OnBoardViewModel,
     data: List<DatabaseModel>
 ){
   val navController = rememberNavController()
@@ -30,6 +32,7 @@ fun OnBoardingController(
         }
         composable("NavigationController"){
             NavigationController(network, dataViewModel, data)
+            onBoardViewModel.setOnBoarding(true)
         }
     }
 

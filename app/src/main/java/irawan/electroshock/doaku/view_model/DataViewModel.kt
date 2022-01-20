@@ -14,11 +14,8 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class DataViewModel @Inject constructor(
-    private val dataRepository: DataRepository,
-    private val dataStorePreference: DataStorePreference) : ViewModel() {
+class DataViewModel @Inject constructor(private val dataRepository: DataRepository) : ViewModel() {
 
-    var onBoarding : MutableLiveData<Boolean> = MutableLiveData()
     private var remoteResponseLiveData : LiveData<List<DatabaseModel>>? = null
     private var databaseResponseData : LiveData<List<DatabaseModel>>? = null
     private lateinit var searchDatabaseDoa : LiveData<List<DatabaseModel>>
@@ -27,17 +24,9 @@ class DataViewModel @Inject constructor(
         viewModelScope.launch {
             remoteResponseLiveData = dataRepository.getDoaResponseLiveData()
             databaseResponseData = dataRepository.getDatabaseResponseLiveData()
-            dataStorePreference.saveOnboarding(true)
         }
     }
 
-    fun retrieveOnBoarding(){
-        viewModelScope.launch(Dispatchers.IO) {
-            dataStorePreference.fetchOnboarding().collect{
-                onBoarding.postValue(it)
-            }
-        }
-    }
 
     fun searchRemoteDoa(query: String): LiveData<DatabaseModel>? {
         dataRepository.searchDoa(query)
