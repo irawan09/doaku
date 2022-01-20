@@ -6,8 +6,8 @@ import androidx.activity.compose.setContent
 import androidx.compose.material.Surface
 import androidx.activity.viewModels
 import androidx.compose.animation.ExperimentalAnimationApi
-import androidx.compose.material.MaterialTheme
 import androidx.compose.ui.ExperimentalComposeUiApi
+import androidx.compose.ui.graphics.Color
 import coil.annotation.ExperimentalCoilApi
 import com.google.accompanist.pager.ExperimentalPagerApi
 import dagger.hilt.android.AndroidEntryPoint
@@ -61,9 +61,20 @@ class MainActivity : ComponentActivity() {
     private fun alert(){
         setContent {
             DoakuTheme {
-                Surface(color = MaterialTheme.colors.background) {
+                Surface(color = Color.White) {
                     ShowAlertDialog()
                 }
+            }
+        }
+    }
+
+    private fun onBoardingScreen(){
+        setContent{
+            DoakuTheme {
+                Surface(color = Color.White) {
+
+                }
+
             }
         }
     }
@@ -74,7 +85,7 @@ class MainActivity : ComponentActivity() {
     private fun layout(network : Boolean, data: List<DatabaseModel>){
         setContent {
             DoakuTheme {
-                Surface(color = MaterialTheme.colors.background) {
+                Surface(color = Color.White) {
 //                    OnBoardingController(network, dataViewModel, data)
                     NavigationController(network, dataViewModel, data)
                 }
