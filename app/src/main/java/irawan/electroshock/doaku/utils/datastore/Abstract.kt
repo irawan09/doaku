@@ -1,4 +1,4 @@
-package irawan.electroshock.doaku.data
+package irawan.electroshock.doaku.utils.datastore
 
 import kotlinx.coroutines.flow.Flow
 
