@@ -8,18 +8,18 @@ data class Page(val title: String , val description : String,
 
 val onboardPages = listOf(
     Page(
-        "Ready To Travel",
-        "Choose the destination, plan your trip , enjoy your holidays",
-        LottieCompositionSpec.RawRes(R.raw.indonesia)
+        "Fitur Offline",
+        "Aplikasi ini dapat dijalankan ketika internet mati",
+        LottieCompositionSpec.RawRes(R.raw.database)
     ),
     Page(
-        "Select The Date",
-        "Choose the destination, plan your trip , enjoy your holidays",
+        "Fleksibilitas",
+        "Aplikasi dapat diakses dengan mudah, dimana dan kapan saja",
         LottieCompositionSpec.RawRes(R.raw.mosque_green)
     ),
     Page(
-        "Feels Like Home",
-        "Choose the destination, plan your trip , enjoy your holidays",
+        "Kelengkapan",
+        "Aplikasi menyediakan doa-doa untuk kehidupan sehari-hari",
         LottieCompositionSpec.RawRes(R.raw.moon_lantern)
     )
 
