@@ -13,5 +13,5 @@ fun AnimatedSplashScreen(navController: NavController){
         navController.popBackStack()
         navController.navigate("DoaListFragment")
     }
-    Animation(source = LottieCompositionSpec.RawRes(R.raw.electroshock), size = 200)
+    Animation(source = LottieCompositionSpec.RawRes(R.raw.logo), size = 200)
 }
