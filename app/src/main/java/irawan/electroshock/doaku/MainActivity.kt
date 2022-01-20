@@ -68,11 +68,13 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    private fun onBoardingScreen(){
+    @ExperimentalCoilApi
+    @ExperimentalPagerApi
+    private fun onBoardingScreen(network : Boolean, data: List<DatabaseModel>){
         setContent{
             DoakuTheme {
                 Surface(color = Color.White) {
-
+                    OnBoardingController(network, dataViewModel, data)
                 }
 
             }
@@ -86,7 +88,6 @@ class MainActivity : ComponentActivity() {
         setContent {
             DoakuTheme {
                 Surface(color = Color.White) {
-//                    OnBoardingController(network, dataViewModel, data)
                     NavigationController(network, dataViewModel, data)
                 }
             }
