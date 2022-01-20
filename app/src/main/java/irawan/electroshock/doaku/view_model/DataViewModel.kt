@@ -1,17 +1,24 @@
 package irawan.electroshock.doaku.view_model
 
 import android.content.Context
+import androidx.datastore.preferences.core.Preferences
 import androidx.lifecycle.*
 import dagger.hilt.android.lifecycle.HiltViewModel
 import irawan.electroshock.doaku.database.DoaDatabaseFactory
 import irawan.electroshock.doaku.model.DatabaseModel
 import irawan.electroshock.doaku.di.DataRepository
+import irawan.electroshock.doaku.utils.datastore.DataStorePreference
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class DataViewModel @Inject constructor(private val dataRepository: DataRepository) : ViewModel() {
+class DataViewModel @Inject constructor(
+    private val dataRepository: DataRepository,
+    private val dataStorePreference: DataStorePreference) : ViewModel() {
 
+    var onBoarding : MutableLiveData<Boolean> = MutableLiveData()
     private var remoteResponseLiveData : LiveData<List<DatabaseModel>>? = null
     private var databaseResponseData : LiveData<List<DatabaseModel>>? = null
     private lateinit var searchDatabaseDoa : LiveData<List<DatabaseModel>>
@@ -20,6 +27,15 @@ class DataViewModel @Inject constructor(private val dataRepository: DataReposito
         viewModelScope.launch {
             remoteResponseLiveData = dataRepository.getDoaResponseLiveData()
             databaseResponseData = dataRepository.getDatabaseResponseLiveData()
+            dataStorePreference.saveOnboarding(true)
+        }
+    }
+
+    fun retrieveOnBoarding(){
+        viewModelScope.launch(Dispatchers.IO) {
+            dataStorePreference.fetchOnboarding().collect{
+                onBoarding.postValue(it)
+            }
         }
     }
 

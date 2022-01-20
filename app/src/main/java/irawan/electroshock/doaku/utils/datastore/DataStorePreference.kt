@@ -12,7 +12,7 @@ import javax.inject.Inject
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "irawan.electroshock.doaku")
 
-class DataStorePreference @Inject constructor(@ApplicationContext private val context: Context) : Abstract {
+class DataStorePreference(private val context: Context) : Abstract {
 
     override suspend fun saveOnboarding(save:Boolean) {
         context.dataStore.edit { preferences ->
