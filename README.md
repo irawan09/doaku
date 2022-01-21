@@ -14,7 +14,8 @@ The aim of this application is to offer users quick access to daily du'a. This a
 12. Hilt
 13. Lottie
 14. Espresso
+15. Androidx Data Store
 
 Credit : 
-Thanks to -> 
+Thanks to : <br> 
 <b><i>Ahmad Ramadhan</i></b> for providing an API for this App (https://doa-doa-api-ahmadramadhan.fly.dev/)
