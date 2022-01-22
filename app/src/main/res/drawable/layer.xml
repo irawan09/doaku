@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:drawable="@drawable/ic_layout" />
+    <item
+        android:drawable="@drawable/ic_topbar_mosque"
+        android:bottom="1050dp"
+        android:left="100dp"
+        android:right="700dp"
+        android:top="150dp"/>
+</layer-list>
