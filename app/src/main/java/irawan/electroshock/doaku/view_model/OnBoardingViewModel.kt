@@ -15,7 +15,7 @@ class OnBoardViewModel @Inject constructor(
     private val dataStorePreference: DataStorePreference) : ViewModel() {
     private var onBoarding : MutableLiveData<Boolean> = MutableLiveData()
 
-    fun setOnBoarding(set : Boolean){
+    fun setOnBoarding(){
         viewModelScope.launch {
             dataStorePreference.saveOnboarding(true)
         }

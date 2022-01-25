@@ -32,7 +32,7 @@ fun OnBoardingController(
         }
         composable("NavigationController"){
             NavigationController(network, dataViewModel, data)
-            onBoardViewModel.setOnBoarding(true)
+            onBoardViewModel.setOnBoarding()
         }
     }
 

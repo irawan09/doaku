@@ -1,15 +1,11 @@
 package irawan.electroshock.doaku.view_model
 
 import android.content.Context
-import androidx.datastore.preferences.core.Preferences
 import androidx.lifecycle.*
 import dagger.hilt.android.lifecycle.HiltViewModel
 import irawan.electroshock.doaku.database.DoaDatabaseFactory
 import irawan.electroshock.doaku.model.DatabaseModel
 import irawan.electroshock.doaku.di.DataRepository
-import irawan.electroshock.doaku.utils.datastore.DataStorePreference
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
