@@ -24,7 +24,7 @@ fun DoaDetailsFragment(navController: NavController, databaseModel: DatabaseMode
 
     Column(modifier = Modifier
         .fillMaxWidth()) {
-        IconButton(onClick = { navController.navigate("DoaListFragment") },
+        IconButton(onClick = { navController.navigateUp() },
             modifier = Modifier.wrapContentSize(Alignment.TopStart)) {
             Icon(imageVector = Icons.Outlined.KeyboardArrowLeft, contentDescription = null)
 
