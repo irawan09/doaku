@@ -7,10 +7,7 @@ import androidx.lifecycle.MutableLiveData
 import dagger.hilt.android.qualifiers.ApplicationContext
 import irawan.electroshock.doaku.database.DoaDatabaseFactory
 import irawan.electroshock.doaku.model.DatabaseModel
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.*
 import javax.inject.Inject
 
 class DataRepository @Inject constructor(
@@ -32,9 +29,8 @@ class DataRepository @Inject constructor(
     private fun loadAllData(context: Context){
         val service = serviceProvider.createService()
         val db = DoaDatabaseFactory.getDatabaseInstance(context = context)
-        CoroutineScope(Dispatchers.IO).launch{
+        CoroutineScope(Dispatchers.IO).async(Dispatchers.Main){
             val response = service.getAllData()
-            withContext(Dispatchers.Main){
                 if (response.isSuccessful){
                     val data = response.body()
                     if(data != null){
@@ -57,20 +53,20 @@ class DataRepository @Inject constructor(
                             db.doaDao().insertDoa(dataDoa)
                             doaResponseLiveData?.postValue(doaArray)
                         }
+                    } else {
+                        Log.e("Status", "Retrofit Null data}")
                     }
                 }
                 else{
                     Log.e("Status", "Retrofit Error ${response.code()}")
                 }
-            }
         }
     }
 
     fun searchDoa(query : String){
         val service = serviceProvider.createService()
-        CoroutineScope(Dispatchers.IO).launch{
+        CoroutineScope(Dispatchers.IO).async(Dispatchers.Main){
             val response = service.geSearchByDoa(query)
-            withContext(Dispatchers.Main){
                 if (response.isSuccessful){
                     val data = response.body()
                     if (data != null){
@@ -89,11 +85,12 @@ class DataRepository @Inject constructor(
                                 artinya = artinya
                             )
                         doaResponseSearchLiveData?.postValue(dataDoaSearch)
+                    } else {
+                        Log.e("Status", "Retrofit Null data}")
                     }
                 } else {
                     Log.e("Status", "Retrofit Error ${response.code()}")
                 }
-            }
         }
     }
 
