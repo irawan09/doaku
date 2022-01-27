@@ -9,6 +9,7 @@ import okhttp3.Cache
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
 class ServiceProvider @Inject constructor(@ApplicationContext private var context : Context) {
@@ -27,6 +28,9 @@ class ServiceProvider @Inject constructor(@ApplicationContext private var contex
                     request.newBuilder().header("Cache-Control","public, only-if-cached, max-stale"+60*60*24*7).build()
             chain.proceed(request)
         }
+        .connectTimeout(40, TimeUnit.SECONDS)
+        .readTimeout(20, TimeUnit.SECONDS)
+        .writeTimeout(30, TimeUnit.SECONDS)
         .build()
 
     fun createService() : DataService = Retrofit.Builder()
