@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list
-<<<<<<< HEAD
-    xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:drawable="@drawable/ic_layout" />
-    <item
-        android:drawable="@drawable/ic_topbar_mosque"
-        android:bottom="1050dp"
-        android:left="100dp"
-        android:right="700dp"
-        android:top="150dp"/>
-=======
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
@@ -129,9 +118,4 @@
         android:gravity="center_vertical"
         android:left="100dp"
         android:bottom="1200dp"/>
-
-
-
-
->>>>>>> 087d9d616230eebe7cf4369bf7e896afb02e5a0c
 </layer-list>

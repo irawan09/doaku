@@ -3,12 +3,9 @@
     android:height="24dp"
     android:viewportWidth="24"
     android:viewportHeight="24"
-<<<<<<< HEAD
-    android:tint="#334BE5"
-=======
     android:tint="#000000"
->>>>>>> 087d9d616230eebe7cf4369bf7e896afb02e5a0c
-    android:alpha="1">
+    android:alpha="0.2">
+
   <group android:scaleX="0.014109347"
       android:scaleY="0.014109347"
       android:translateX="-1.3333334"
