@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list
+<<<<<<< HEAD
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:drawable="@drawable/ic_layout" />
@@ -9,4 +10,128 @@
         android:left="100dp"
         android:right="700dp"
         android:top="150dp"/>
+=======
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <item
+        android:drawable="@drawable/ic_layout" />
+
+    <item
+        android:drawable="@drawable/ic_background_design"
+        android:height="500dp"
+        android:width="500dp"
+        tools:ignore="UnusedAttribute"
+        android:gravity="center"
+        android:bottom="1000dp"
+        android:left="200dp" />
+    <item
+        android:drawable="@drawable/ic_background_design"
+        android:height="270dp"
+        android:width="270dp"
+        tools:ignore="UnusedAttribute"
+        android:gravity="center"
+        android:bottom="200dp"
+        android:left="900dp" />
+    <item
+        android:drawable="@drawable/ic_background_design"
+        android:height="315dp"
+        android:width="315dp"
+        tools:ignore="UnusedAttribute"
+        android:gravity="center"
+        android:bottom="200dp"
+        android:left="300dp" />
+    <item
+        android:drawable="@drawable/ic_background_design"
+        android:height="350dp"
+        android:width="350dp"
+        tools:ignore="UnusedAttribute"
+        android:gravity="center_vertical"
+        android:bottom="100dp"
+        android:left="380dp" />
+    <item
+        android:drawable="@drawable/ic_background_design"
+        android:height="350dp"
+        android:width="350dp"
+        tools:ignore="UnusedAttribute"
+        android:gravity="center"
+        android:bottom="900dp"
+        android:left="1050dp" />
+    <item
+        android:drawable="@drawable/ic_background_design"
+        android:height="300dp"
+        android:width="300dp"
+        tools:ignore="UnusedAttribute"
+        android:gravity="center_vertical"
+        android:bottom="50dp"
+        android:left="100dp" />
+    <item
+        android:drawable="@drawable/ic_background_design"
+        android:height="400dp"
+        android:width="400dp"
+        tools:ignore="UnusedAttribute"
+        android:gravity="top"
+        android:left="250dp" />
+    <item
+        android:drawable="@drawable/ic_background_design"
+        android:height="200dp"
+        android:width="200dp"
+        tools:ignore="UnusedAttribute"
+        android:gravity="top"
+        android:left="650dp" />
+    <item
+        android:drawable="@drawable/ic_background_design"
+        android:height="250dp"
+        android:width="250dp"
+        tools:ignore="UnusedAttribute"
+        android:gravity="top"
+        android:top="30dp"
+        android:bottom="150dp"
+        android:left="860dp" />
+    <item
+        android:drawable="@drawable/ic_background_design"
+        android:height="350dp"
+        android:width="350dp"
+        tools:ignore="UnusedAttribute"
+        android:gravity="center"
+        android:bottom="1200dp"
+        android:top="500dp"
+        android:right="600dp"/>
+    <item
+        android:drawable="@drawable/ic_background_design"
+        android:height="250dp"
+        android:width="250dp"
+        tools:ignore="UnusedAttribute"
+        android:gravity="center_horizontal"
+        android:top="200dp"
+        android:right="1080dp" />
+    <item
+        android:drawable="@drawable/ic_background_design"
+        android:height="250dp"
+        android:width="250dp"
+        tools:ignore="UnusedAttribute"
+        android:gravity="center_horizontal"
+        android:top="500dp"
+        android:right="1100dp" />
+    <item
+        android:drawable="@drawable/ic_background_design"
+        android:height="310dp"
+        android:width="310dp"
+        tools:ignore="UnusedAttribute"
+        android:gravity="top"
+        android:left="1090dp" />
+    <item
+        android:drawable="@drawable/ic_topbar_mosque"
+        android:height="700dp"
+        android:width="700dp"
+        tools:ignore="UnusedAttribute"
+        android:gravity="center_vertical"
+        android:left="100dp"
+        android:bottom="1200dp"/>
+
+
+
+
+>>>>>>> 087d9d616230eebe7cf4369bf7e896afb02e5a0c
 </layer-list>
