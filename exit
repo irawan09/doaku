@@ -1,0 +1,537 @@
+[33mcommit b8885250212e780a7fd8a97ba4f7e7c3c07b1bf3[m[33m ([m[1;36mHEAD -> [m[1;32mirawan[m[33m)[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Sat Feb 12 03:41:07 2022 +0100
+
+    lastest version
+
+[33mcommit d0df3fd2cd41e3ee9c5d144c6bb3129386cfe284[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Sat Feb 12 02:39:59 2022 +0100
+
+    Update
+
+[33mcommit 602a812381053079a8d471dfe92882d0907618bc[m[33m ([m[1;32mmaster[m[33m)[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Mon Jan 31 09:30:54 2022 +0100
+
+    Update
+
+[33mcommit 8b6ba2f9d134af2758d0487d8d7c1f93ff437f80[m
+Merge: 71dffa1 087d9d6
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Mon Jan 31 09:15:03 2022 +0100
+
+    Update
+
+[33mcommit 71dffa1bab76ed5259eb3773bc9dc44fcbdac925[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Mon Jan 31 09:05:51 2022 +0100
+
+    Update
+
+[33mcommit 087d9d616230eebe7cf4369bf7e896afb02e5a0c[m
+Author: Ary Kurniadi Irawan <33724086+irawan09@users.noreply.github.com>
+Date:   Fri Jan 28 12:56:00 2022 +0100
+
+    Update README.md
+
+[33mcommit 7baa3c3a05afa761e3b0a18782cae2113f08bf1e[m
+Author: Ary Kurniadi Irawan <33724086+irawan09@users.noreply.github.com>
+Date:   Fri Jan 28 12:51:52 2022 +0100
+
+    Update README.md
+
+[33mcommit 78a64d92bf44b238c077c5ab80027362adbee7e5[m
+Author: irawan09 <arykurniadiirawan@yahoo.co.id>
+Date:   Fri Jan 28 02:23:51 2022 +0100
+
+    first commit
+
+[33mcommit aa14e0baf17683be059de752b8ebc032ed1f008f[m
+Author: irawan09 <arykurniadiirawan@yahoo.co.id>
+Date:   Fri Jan 28 02:20:58 2022 +0100
+
+    first commit
+
+[33mcommit 21b44fa1d9da5bd15b0f539caf4e6209c68f4d89[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Thu Jan 27 16:33:19 2022 +0100
+
+    Interceptor connection timeout added
+
+[33mcommit 9e068d330ab8977a2b392acf13db62dc20e23c99[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Wed Jan 26 15:58:57 2022 +0100
+
+    Coroutine asynchronous concurrency added
+
+[33mcommit 4ac7c55912a0d2e36a90b899adf23d646efdf93d[m
+Merge: 164a3ec 9eb5543
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Tue Jan 25 15:10:59 2022 +0100
+
+    Merge branch 'master' of https://github.com/irawan09/doaku
+
+[33mcommit 164a3ec6cad1d62b9f9c959bc90eae3bcee28f31[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Tue Jan 25 15:10:35 2022 +0100
+
+    navigateUp added in detail fragment
+
+[33mcommit 9eb5543bfb9d38c6dc981cd3c2aed189f1c63264[m
+Merge: 9b38744 d98221b
+Author: Ary Kurniadi Irawan <33724086+irawan09@users.noreply.github.com>
+Date:   Sat Jan 22 01:04:12 2022 +0100
+
+    Merge pull request #4 from irawan09/anonymous
+    
+    Working with drawable
+
+[33mcommit d98221b6534527e57b651300d54abe772d959bc4[m
+Author: irawan09 <arykurniadiirawan@yahoo.co.id>
+Date:   Sat Jan 22 00:54:41 2022 +0100
+
+    Working with drawable
+
+[33mcommit 9b38744c4a4f422a792dacb456c7c8b463eda572[m
+Author: Ary Kurniadi Irawan <33724086+irawan09@users.noreply.github.com>
+Date:   Fri Jan 21 09:28:37 2022 +0100
+
+    Update README.md
+
+[33mcommit 683d041f7649a8cce9c83f2381e74fda1affd4ea[m
+Author: Ary Kurniadi Irawan <33724086+irawan09@users.noreply.github.com>
+Date:   Fri Jan 21 09:27:24 2022 +0100
+
+    Update README.md
+
+[33mcommit e323dc1039a428ba431141d095e0e3a8e34f4926[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Thu Jan 20 19:38:54 2022 +0100
+
+    Finished OnBoarding Screen
+
+[33mcommit 48d6255ccf820bc16420bb8c34493dc6c409dcf7[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Thu Jan 20 19:35:42 2022 +0100
+
+    Finished OnBoarding Screen
+
+[33mcommit a7e75c3df5127544b4c8cdb056c770e4e805d315[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Thu Jan 20 19:20:49 2022 +0100
+
+    Finish OnBoarding Screen
+
+[33mcommit cd11e84daeebc4a5ecea0f01fe459ba575402ae2[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Thu Jan 20 16:56:02 2022 +0100
+
+    Update Androidx datastore
+
+[33mcommit 7fbde735a3ad34c7f7606d3d9d39fb40d73607ba[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Thu Jan 20 16:18:52 2022 +0100
+
+    Update Androidx datastore
+
+[33mcommit 4b369d3f708a26794dd88f41c8479641f235eea3[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Thu Jan 20 16:17:51 2022 +0100
+
+    Update Androidx datastore
+
+[33mcommit 76a0e609ea80368910fb8ee1130495fa98632759[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Thu Jan 20 16:17:07 2022 +0100
+
+    Update Androidx datastore
+
+[33mcommit 3e39875ec73bfd0b4afeb3298c1466263af12f84[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Thu Jan 20 12:12:32 2022 +0100
+
+    Update resources
+
+[33mcommit 5b6a40073a150ceb019786d85a7383d4d9149c9f[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Thu Jan 20 12:02:49 2022 +0100
+
+    Update resources
+
+[33mcommit d6924cb86a356c4678b9997bbc6eee9d014e6bd2[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Thu Jan 20 11:57:16 2022 +0100
+
+    Update resources name
+
+[33mcommit d92b731e3a907e9fb95358b3efd5eaa71d2af7e2[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Wed Jan 19 16:05:10 2022 +0100
+
+    Update OnBoarding Screen
+
+[33mcommit e879ee9c1e67326895dcde499eb005477403e8bb[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Wed Jan 19 15:55:10 2022 +0100
+
+    Update Navigation Controller
+
+[33mcommit 6d49a47a12a8eb3d5dfb55b1672c6a6c8a55c459[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Wed Jan 19 15:23:54 2022 +0100
+
+    Update Navigation Controller
+
+[33mcommit 5979ec96736e6ce809fa8afea7d8f6a4de23b54c[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Wed Jan 19 15:21:07 2022 +0100
+
+    Update Navigation Controller
+
+[33mcommit e129173d46ae275531abd8ff6bb9dabc02489bc9[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Wed Jan 19 15:13:37 2022 +0100
+
+    Working on OnBoarding Screen
+
+[33mcommit 16749e87909e7320b61099431b26c8f06a892196[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Wed Jan 19 14:42:45 2022 +0100
+
+    Working on OnBoarding Screen
+
+[33mcommit fac1a2a02b3173d3c09b81254f0a7ccafb5c0c25[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Wed Jan 19 14:38:31 2022 +0100
+
+    Working on OnBoarding Screen
+
+[33mcommit 206f923c92618616edd5d949fa760a89cc2a887c[m
+Merge: 3d3c1c3 8ebcfb2
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Wed Jan 19 14:32:42 2022 +0100
+
+    Merge branch 'master' of https://github.com/irawan09/doaku
+
+[33mcommit 3d3c1c3cf3e8b6bdcb70251d23e829a6366f11c9[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Wed Jan 19 14:32:22 2022 +0100
+
+    Working on OnBoarding Screen
+
+[33mcommit 8ebcfb21f39500886ce2c64b889bee0d75aef886[m
+Author: Ary Kurniadi Irawan <33724086+irawan09@users.noreply.github.com>
+Date:   Tue Jan 18 15:09:32 2022 +0100
+
+    Update README.md
+
+[33mcommit 65a657684adf7e8735644d8c07a2a00b1f1d5c26[m
+Author: Ary Kurniadi Irawan <33724086+irawan09@users.noreply.github.com>
+Date:   Tue Jan 18 15:05:50 2022 +0100
+
+    Update README.md
+
+[33mcommit 9394c983e168c235ee0031798ea4a003d5b70a54[m
+Author: Ary Kurniadi Irawan <33724086+irawan09@users.noreply.github.com>
+Date:   Tue Jan 18 15:04:49 2022 +0100
+
+    Update README.md
+
+[33mcommit 58e0b926835dea6e41d414445e94d4394823a27a[m
+Author: Ary Kurniadi Irawan <33724086+irawan09@users.noreply.github.com>
+Date:   Tue Jan 18 15:02:12 2022 +0100
+
+    Update README.md
+
+[33mcommit b02beefa9bf800c197e930a9d5d98303656f0906[m
+Author: Ary Kurniadi Irawan <33724086+irawan09@users.noreply.github.com>
+Date:   Tue Jan 18 13:51:42 2022 +0100
+
+    Update README.md
+
+[33mcommit f4a8d8908994876caabe46293a5f2b0a44d0c0b2[m
+Author: Ary Kurniadi Irawan <33724086+irawan09@users.noreply.github.com>
+Date:   Tue Jan 18 13:38:59 2022 +0100
+
+    Create README.md
+
+[33mcommit 691a1d0e09d40e126d6ae843388e10981d37fdf9[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Tue Jan 18 12:07:27 2022 +0100
+
+    Update UI
+
+[33mcommit 2ddba163afd7cee25d9330bf2a9c315619170a13[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Tue Jan 18 12:01:53 2022 +0100
+
+    Update UI
+
+[33mcommit 5b53a2ccdfda208fc8e98d83f1b6101fd17f4139[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Tue Jan 18 12:01:04 2022 +0100
+
+    Update UI
+
+[33mcommit 6e5ba118db90237b2d1b3ea57993c3c7f2c9bc88[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Tue Jan 18 11:49:05 2022 +0100
+
+    Update UI
+
+[33mcommit ee00192e46b190eeda46559f57046ef434786fbd[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Tue Jan 18 11:38:06 2022 +0100
+
+    Update UI
+
+[33mcommit 1e68a4e968af09a503e2f2e32071456f1fc1b61e[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Tue Jan 18 11:34:06 2022 +0100
+
+    Update UI
+
+[33mcommit 09b91f8392b5f7b150210d6cb1bbf9de060280eb[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Tue Jan 18 11:25:56 2022 +0100
+
+    Update UI
+
+[33mcommit d1afcd3b34f3cc7c9620ab37d9dbcecd4b1841ec[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Tue Jan 18 10:37:19 2022 +0100
+
+    Update UI
+
+[33mcommit c6c7a9030d6a44e137e2c5cabf8a575e2f5a6032[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Tue Jan 18 10:28:25 2022 +0100
+
+    Update UI
+
+[33mcommit c867b11ce028c9eabda683bee95ae775c9101c3a[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Tue Jan 18 10:04:21 2022 +0100
+
+    Update UI
+
+[33mcommit 528488fe008a31319d4316844593c3daf96e52f1[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Tue Jan 18 10:03:53 2022 +0100
+
+    Update UI
+
+[33mcommit 31aabac3ccebc37168972a7150bd838320cea9b9[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Tue Jan 18 09:41:23 2022 +0100
+
+    Update UI
+
+[33mcommit 654604b4476a4834187a086bac05e9158b597a6f[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Tue Jan 18 09:34:22 2022 +0100
+
+    Update UI
+
+[33mcommit fc73949e141cff671d081714e0dd6376d826b19a[m
+Merge: a009196 0f15145
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Tue Jan 18 09:33:22 2022 +0100
+
+    Merge branch 'master' of https://github.com/irawan09/doaku
+
+[33mcommit a009196660f1859f71840911b7cc2ec55817734f[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Tue Jan 18 09:23:12 2022 +0100
+
+    Update UI
+
+[33mcommit 307b04d612ef0c651668c4e3e6a202629e0b0157[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Tue Jan 18 09:18:28 2022 +0100
+
+    Update UI
+
+[33mcommit 0f15145b5d304d502d52afc5a0ca10eb6b97c98a[m
+Merge: 1d218e3 e96e2fe
+Author: Ary Kurniadi Irawan <33724086+irawan09@users.noreply.github.com>
+Date:   Sat Jan 15 19:07:39 2022 +0100
+
+    Merge pull request #3 from irawan09/User
+    
+    Update Gradle
+
+[33mcommit e96e2fe2a8f35f0c7351245ab1709e36de839563[m
+Author: irawan09 <arykurniadiirawan@yahoo.co.id>
+Date:   Sat Jan 15 19:06:59 2022 +0100
+
+    Update Gradle
+
+[33mcommit 1d218e3c92f4d9d9214f45ab82ce7c67366b5a0f[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Fri Jan 14 18:35:06 2022 +0100
+
+    Alert Button added
+
+[33mcommit c25294eeca7b99127856956dcb9fe7694c64fcc8[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Fri Jan 14 18:31:51 2022 +0100
+
+    Alert Button added
+
+[33mcommit 432173dd823a91d75a06e4bbfb6e3b51501a993d[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Fri Jan 14 13:53:55 2022 +0100
+
+    Internet Connection
+
+[33mcommit 8df9cb63286db9dd7be65dfccb1914165076ca59[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Fri Jan 14 13:52:07 2022 +0100
+
+    Internet Connection
+
+[33mcommit 3ef24c05afbc815b79ddc99ddec9463a9aeb3c18[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Fri Jan 14 13:35:37 2022 +0100
+
+    Internet Connection
+
+[33mcommit e26ed07e24f64f4bbaa0f8bcce5a8746d1df3dd5[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Fri Jan 14 10:10:37 2022 +0100
+
+    Internet Connection
+
+[33mcommit e7e27f8905d223b43f3daef837be29d5cbe4f487[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Fri Jan 14 10:10:15 2022 +0100
+
+    Internet Connection
+
+[33mcommit 45cecf0b7cae55e452e919ab042b876dce140e77[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Fri Jan 14 09:37:26 2022 +0100
+
+    Internet Connection
+
+[33mcommit 186ce43499c7437bec5785647e711930c1655632[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Fri Jan 14 09:14:01 2022 +0100
+
+    Icon update
+
+[33mcommit 302499a37acf8000422debbd492a581e7e87994f[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Thu Jan 13 16:27:45 2022 +0100
+
+    Update Splash Screen
+
+[33mcommit 7a344c86daa575b8264078965a5ee81ee781788e[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Thu Jan 13 16:20:52 2022 +0100
+
+    Update Splash Screen
+
+[33mcommit d253aa2249a417246a943ec9fec40c40c5954596[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Thu Jan 13 16:13:46 2022 +0100
+
+    Update Splash Screen
+
+[33mcommit 7d0fffca6f99614dccbb2a16a17e14aed1814b62[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Thu Jan 13 16:11:54 2022 +0100
+
+    Update Splash Screen
+
+[33mcommit f9e2291cc403c07a8d67c94b274ab45cdfa876de[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Thu Jan 13 16:10:43 2022 +0100
+
+    Update Splash Screen
+
+[33mcommit 485bfb9a3e02318acd64244805d6971e9d666e71[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Thu Jan 13 16:07:00 2022 +0100
+
+    Back button handlers issue
+
+[33mcommit 657c8dfac435a6495a203216bc4a79d2070b2cc3[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Thu Jan 13 16:06:32 2022 +0100
+
+    Update Splash Screen
+
+[33mcommit c5b7b4bb1b16f2ebfde802dc51855ab1feab1e5a[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Thu Jan 13 15:03:01 2022 +0100
+
+    Back button handlers issue
+
+[33mcommit 1a275018a3b03000fa3e88d14f8d7402c764a5d0[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Thu Jan 13 14:03:19 2022 +0100
+
+    Splash screen addded
+
+[33mcommit 4eef10d048f492dad19e46179a05db292f5b425a[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Thu Jan 13 13:20:36 2022 +0100
+
+    Extending UI
+
+[33mcommit 0011c7294ba36401d6a3da313fad83f776df64bb[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Thu Jan 13 11:36:26 2022 +0100
+
+    Extending UI
+
+[33mcommit 46e00729ce28d2027a09d9d99a23da1aa4a035f4[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Thu Jan 13 11:32:19 2022 +0100
+
+    Extending UI
+
+[33mcommit 410676ae9f1b34ce57c4773e94d8d5ef9deecaa9[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Wed Jan 12 12:25:44 2022 +0100
+
+    Update Depedency Injection
+
+[33mcommit 4505c084caa348db27996fcfbcc5ef94682f49f1[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Wed Jan 12 12:01:55 2022 +0100
+
+    Update Depedency Injection
+
+[33mcommit b63001ed78e505ad74e400d4f8c1be1fb1561a60[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Wed Jan 12 12:01:12 2022 +0100
+
+    Update Depedency Injection
+
+[33mcommit 703fd1e5425a24c41d1718c71d07b08dbc7e5885[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Wed Jan 12 11:09:26 2022 +0100
+
+    Update Gradle
+
+[33mcommit d5dfebc65e602a6c64dae12f67fc779729501a15[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Wed Jan 12 10:56:51 2022 +0100
+
+    Gradle Update
+
+[33mcommit 1717203cf6a272a32b49549db20b73c438aa1852[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Wed Jan 12 10:49:04 2022 +0100
+
+    Update Hilt Depedencies
+
+[33mcommit 59f2e39560af95aae2ce37c722e7b8d2d1221254[m
+Author: Ary Kurniadi Irawan <arykurniadiirawan@yahoo.co.id>
+Date:   Wed Jan 12 10:48:39 2022 +0100
+
+    Update Hilt Depedencies
