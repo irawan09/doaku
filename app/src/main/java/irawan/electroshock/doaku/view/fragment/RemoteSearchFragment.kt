@@ -2,6 +2,7 @@ package irawan.electroshock.doaku.view.fragment
 
 import android.content.Context
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.ExperimentalComposeUiApi
@@ -20,7 +21,7 @@ import irawan.electroshock.doaku.view_model.DataViewModel
 @ExperimentalComposeUiApi
 @ExperimentalCoilApi
 @Composable
-fun RemoteSearchFragment(context: Context, network: Boolean, navController: NavController, dataViewModel: DataViewModel, data: DatabaseModel){
+fun RemoteSearchFragment(context: Context, network: Boolean, navController: NavController, dataViewModel: DataViewModel, data: List<DatabaseModel>){
     Scaffold(backgroundColor = Color.LightGray, modifier = Modifier
         .fillMaxWidth()
         .fillMaxHeight()) {
@@ -28,7 +29,11 @@ fun RemoteSearchFragment(context: Context, network: Boolean, navController: NavC
         Column(modifier = Modifier
             .fillMaxWidth()) {
             SearchButton(context, network, navController, dataViewModel)
-            CardView(navController, data)
+            LazyColumn {
+                items(data.size){ index ->
+                    CardView(navController = navController, data = data[index])
+                }
+            }
         }
     }
 }

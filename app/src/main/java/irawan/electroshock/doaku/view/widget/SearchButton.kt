@@ -33,7 +33,7 @@ fun SearchButton(context: Context, network: Boolean, navController: NavControlle
     var dataSearch by remember { mutableStateOf(TextFieldValue("")) }
     val keyboardController = LocalSoftwareKeyboardController.current
 
-    fun getRemoteSearchData(databaseModel: DatabaseModel) {
+    fun getRemoteSearchData(databaseModel: List<DatabaseModel>) {
         val doaJson = Gson().toJson(databaseModel)
         navController.navigate("RemoteSearchFragment/$doaJson")
     }

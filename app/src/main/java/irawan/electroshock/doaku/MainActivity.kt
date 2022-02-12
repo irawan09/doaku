@@ -52,7 +52,6 @@ class MainActivity : ComponentActivity() {
                 if(network == true){
                     dataViewModel.getRemoteResponseLiveData()?.observe(this, { remote ->
                         onBoardViewModel.retrieveOnBoarding().observe(this, { onBoarding ->
-                            Log.d("Data Store", onBoarding.toString())
                             if (onBoarding == true){
                                 layout(network, remote)
                             } else {

@@ -11,7 +11,9 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class ServiceProvider @Inject constructor(@ApplicationContext private var context : Context) {
 
     private val  cacheSize = (5*1024*1024).toLong()
@@ -34,7 +36,7 @@ class ServiceProvider @Inject constructor(@ApplicationContext private var contex
         .build()
 
     fun createService() : DataService = Retrofit.Builder()
-        .baseUrl("https://doa-doa-api-ahmadramadhan.fly.dev")
+        .baseUrl("https://tanyadoa-api.herokuapp.com")
         .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
         .client(okHttpClient)
         .build()
