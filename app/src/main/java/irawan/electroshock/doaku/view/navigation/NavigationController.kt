@@ -37,7 +37,7 @@ fun NavigationController(network : Boolean, dataViewModel: DataViewModel, data: 
             type = NavType.StringType
         })){ backStackEntry ->
             backStackEntry.arguments?.getString("remoteSearch").let { json ->
-                val searchRemote : DatabaseModel = Gson().fromJson(json, DatabaseModel::class.java )
+                val searchRemote : List<DatabaseModel> = GsonBuilder().create().fromJson(json, Array<DatabaseModel>::class.java).toList()
                 RemoteSearchFragment(context, network, navController, dataViewModel, searchRemote)
             }
         }

@@ -1,16 +1,15 @@
 package irawan.electroshock.doaku.api
 
-import irawan.electroshock.doaku.model.SerializedModel
+import irawan.electroshock.doaku.model.JSONObject
 import retrofit2.Response
 import retrofit2.http.GET
-import okhttp3.ResponseBody
 import retrofit2.http.Path
 
 
 interface DataService {
-    @GET("/api")
-    suspend fun getAllData() : Response<List<SerializedModel>>
+    @GET("/all")
+    suspend fun getAllData() : Response<JSONObject>
 
-    @GET("/api/doa/{search}")
-    suspend fun geSearchByDoa(@Path(value = "search", encoded = true) name: String?): Response<SerializedModel>
+    @GET("/search/{search}")
+    suspend fun getSearchByDoa(@Path(value = "search", encoded = true) name: String?): Response<JSONObject>
 }

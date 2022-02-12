@@ -24,7 +24,7 @@ class DataViewModel @Inject constructor(private val dataRepository: DataReposito
     }
 
 
-    fun searchRemoteDoa(query: String): LiveData<DatabaseModel>? {
+    fun searchRemoteDoa(query: String): LiveData<List<DatabaseModel>>? {
         dataRepository.searchDoa(query)
         return dataRepository.getDoaResponseSearchLiveData()
     }
