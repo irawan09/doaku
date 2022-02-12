@@ -28,7 +28,7 @@ import kotlinx.coroutines.launch
 @ExperimentalComposeUiApi
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
-    private val dataViewModel : DataViewModel by viewModels<DataViewModel>()
+    private val dataViewModel : DataViewModel by viewModels()
     private val onBoardViewModel : OnBoardViewModel by viewModels()
     private lateinit var networkMonitor : NetworkMonitor
 
