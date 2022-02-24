@@ -1,5 +1,6 @@
 # DoaKu
-The aim of this application is to offer users quick access to daily du'a. This app was created using Android technology and the Kotlin programming language, as well as the MVVM architecture/Clean Architecture. The application also comes with a database feature, when the internet connection is off while the application is running, the user will not lose data on the application. The following libraries have been used :
+<br>
+The goal of this software is to provide users with easy access to daily du'a. This app was made with Android technology, the Kotlin programming language, and the MVVM/Clean Achitecture. The application also includes a database feature, which ensures that the user's data is not lost if the internet connection is lost while the application is running. The following libraries were utilized in this project:
 1. Retrofit
 2. Room
 3. View Model
