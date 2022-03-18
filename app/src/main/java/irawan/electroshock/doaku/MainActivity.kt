@@ -25,6 +25,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
+@ExperimentalAnimationApi
+@ExperimentalPagerApi
 @ExperimentalComposeUiApi
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -32,10 +34,8 @@ class MainActivity : ComponentActivity() {
     private val onBoardViewModel : OnBoardViewModel by viewModels()
     private lateinit var networkMonitor : NetworkMonitor
 
-    @ExperimentalCoilApi
-    @ExperimentalAnimationApi
-    @ExperimentalPagerApi
-    override fun onCreate(savedInstanceState: Bundle?) {
+    @OptIn(ExperimentalCoilApi::class)
+    public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Utils.setLifeCycleOwner(this)
         val inetCheck = Utils.hasNetwork(this)
