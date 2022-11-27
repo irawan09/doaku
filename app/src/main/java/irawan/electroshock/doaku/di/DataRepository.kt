@@ -7,6 +7,7 @@ import androidx.lifecycle.MutableLiveData
 import dagger.hilt.android.qualifiers.ApplicationContext
 import irawan.electroshock.doaku.database.DoaDatabaseFactory
 import irawan.electroshock.doaku.model.DatabaseModel
+import irawan.electroshock.doaku.utils.Resource
 import kotlinx.coroutines.*
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -21,6 +22,8 @@ class DataRepository @Inject constructor(
     private var databaseResponseData : LiveData<List<DatabaseModel>>? = null
     private var doaArray : ArrayList<DatabaseModel> = ArrayList()
     private var remoteDoaArray : ArrayList<DatabaseModel> = ArrayList()
+
+    private val fetchRemoteData = MutableLiveData<Resource<List<DatabaseModel>>>()
 
     init {
         doaResponseLiveData = MutableLiveData<List<DatabaseModel>>()
@@ -98,6 +101,19 @@ class DataRepository @Inject constructor(
                     Log.e("Status", "Retrofit Error ${response.code()}")
                 }
         }
+    }
+
+    private fun fetchRemoteData(): LiveData<Resource<List<DatabaseModel>>>{
+        CoroutineScope(Dispatchers.IO).launch{
+            fetchRemoteData.postValue(Resource.loading())
+            try{
+                fetchRemoteData.postValue(Resource.success(remoteDoaArray))
+            } catch (e: Exception){
+                fetchRemoteData.postValue(Resource.error(e.toString()))
+            }
+        }
+
+        return fetchRemoteData
     }
 
     fun getDoaResponseSearchLiveData(): LiveData<List<DatabaseModel>>? {
