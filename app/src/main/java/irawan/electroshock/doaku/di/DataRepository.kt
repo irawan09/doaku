@@ -7,6 +7,7 @@ import androidx.lifecycle.MutableLiveData
 import dagger.hilt.android.qualifiers.ApplicationContext
 import irawan.electroshock.doaku.database.DoaDatabaseFactory
 import irawan.electroshock.doaku.model.DatabaseModel
+import irawan.electroshock.doaku.model.SerializedModel
 import irawan.electroshock.doaku.utils.Resource
 import kotlinx.coroutines.*
 import javax.inject.Inject
@@ -23,9 +24,10 @@ class DataRepository @Inject constructor(
     private var doaArray : ArrayList<DatabaseModel> = ArrayList()
     private var remoteDoaArray : ArrayList<DatabaseModel> = ArrayList()
 
-    private val fetchRemoteData = MutableLiveData<Resource<List<DatabaseModel>>>()
+    private var fetchRemoteData = MutableLiveData<Resource<List<SerializedModel>>>()
 
     init {
+        fetchRemoteData = MutableLiveData<Resource<List<SerializedModel>>>()
         doaResponseLiveData = MutableLiveData<List<DatabaseModel>>()
         doaResponseSearchLiveData = MutableLiveData<List<DatabaseModel>>()
         loadAllData(context)
@@ -103,14 +105,24 @@ class DataRepository @Inject constructor(
         }
     }
 
-    private fun fetchRemoteData(): LiveData<Resource<List<DatabaseModel>>>{
+    fun fetchRemoteData(): LiveData<Resource<List<SerializedModel>>>{
+        val service = serviceProvider.createService()
         CoroutineScope(Dispatchers.IO).launch{
-            fetchRemoteData.postValue(Resource.loading())
-            try{
-                fetchRemoteData.postValue(Resource.success(remoteDoaArray))
-            } catch (e: Exception){
-                fetchRemoteData.postValue(Resource.error(e.toString()))
+            val response = service.getAllData()
+            if(response.isSuccessful){
+                val data = response.body()?.data
+                fetchRemoteData.postValue(Resource.loading())
+                try{
+                    fetchRemoteData.postValue(Resource.success(data))
+                } catch (e: Exception){
+                    fetchRemoteData.postValue(Resource.error(e.toString()))
+                }
+            } else {
+                Log.e("Status", "Retrofit Error ${response.code()}")
             }
+
+
+
         }
 
         return fetchRemoteData

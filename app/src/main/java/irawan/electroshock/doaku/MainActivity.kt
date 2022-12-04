@@ -1,6 +1,7 @@
 package irawan.electroshock.doaku
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
@@ -49,6 +50,10 @@ class MainActivity : ComponentActivity() {
             networkMonitor = NetworkMonitor(this)
             networkMonitor.observe(this, { network ->
                 if(network == true){
+
+                    dataViewModel.getRemoteFetchData()?.observe(this, { remote ->
+                        Log.d("Log Fetching Data", remote.data.toString())
+                    })
                     dataViewModel.getRemoteResponseLiveData()?.observe(this, { remote ->
                         onBoardViewModel.retrieveOnBoarding().observe(this, { onBoarding ->
                             if (onBoarding == true){

@@ -6,6 +6,8 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import irawan.electroshock.doaku.database.DoaDatabaseFactory
 import irawan.electroshock.doaku.model.DatabaseModel
 import irawan.electroshock.doaku.di.DataRepository
+import irawan.electroshock.doaku.model.SerializedModel
+import irawan.electroshock.doaku.utils.Resource
 import irawan.electroshock.doaku.view.use_case.DoaUseCase
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -16,17 +18,22 @@ class DataViewModel @Inject constructor(
     private val repository: DataRepository
 ) : ViewModel() {
 
+    private var fetchRemoteData: LiveData<Resource<List<SerializedModel>>>? = null
     private var remoteResponseLiveData : LiveData<List<DatabaseModel>>? = null
     private var databaseResponseData : LiveData<List<DatabaseModel>>? = null
     private lateinit var searchDatabaseDoa : LiveData<List<DatabaseModel>>
 
     init{
         viewModelScope.launch {
+            fetchRemoteData = doaUseCase.getFetchRemoteUseCase()
             remoteResponseLiveData = doaUseCase.getDoaRemoteUseCase()
             databaseResponseData = doaUseCase.getDatabaseUseCase()
         }
     }
 
+    fun getRemoteFetchData(): LiveData<Resource<List<SerializedModel>>>? {
+        return fetchRemoteData
+    }
 
     fun searchRemoteDoa(query: String): LiveData<List<DatabaseModel>>? {
         repository.searchDoa(query)
