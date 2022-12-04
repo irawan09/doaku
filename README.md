@@ -16,3 +16,4 @@ The goal of this software is to provide users with easy access to daily du'a. Th
 13. Lottie
 14. Espresso
 15. Androidx Data Store
+16. MockK
